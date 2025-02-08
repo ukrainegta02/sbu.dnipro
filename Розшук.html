@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розшук - СБУ м. Дніпро</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1A2A44; /* Темно-синій фон */
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #003366; /* Теж темно-синій */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            margin-top: 10px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fcd116;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1em 0;
+            border-radius: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 20px;
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 12px;
+            background-color: #003366;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fcd116;
+            color: #003366;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 30px;
+            background-color: #2A3A61; /* Темно-синій */
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #1A2A44; /* Трохи темніший фон */
+            border-radius: 12px;
+            width: 65%;
+        }
+
+        .wanted-photo {
+            max-width: 300px;
+            border: 5px solid #fcd116; /* Рамка навколо фото */
+            border-radius: 15px;
+            display: block;
+            margin-right: 20px; /* Відстань між фото та текстом */
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003366;
+            color: #fff;
+        }
+
+        .person-info {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <h1 class="site-title">Розшук - СБУ м. Дніпро</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="Про СБУ.html">Про СБУ</a>
+            <a href="Керівництво.html">Керівництво</a>
+            <a href="Інформація.html">Інформація</a>
+            <a href="Контакти.html">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/6780.webp" alt="Фото розшукуваної особи" class="wanted-photo">
+        
+        <section>
+            <h2>Розшукується</h2>
+            <div class="person-info">
+                <p><strong>Ім'я:</strong> Артем Неєзжалий</p>
+                <p><strong>Номер паспорту:</strong> 6854854</p>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.logo, .site-title, nav a');
+            elements.forEach(function(element) {
+                element.classList.add('fadeIn');
+            });
+        });
+    </script>
+</body>
+</html>

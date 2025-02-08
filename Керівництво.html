@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Керівництво - СБУ м. Дніпро</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1A2A44; /* Темно-синій фон */
+            color: #ffd000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366; /* Темно-синій */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            margin-top: 10px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fcd116;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1em 0;
+            border-radius: 15px;
+            margin-top: 1em;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 20px;
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 12px;
+            background-color: #003366;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fcd116;
+            color: #003366;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 30px;
+            background-color: #2A3A61;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #1A2A44; /* Темно-синій */
+            border-radius: 12px;
+        }
+
+        h2, p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px; /* Обмеження ширини */
+        }
+
+        .leader {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards; /* Анімація */
+            animation-delay: 0.5s;
+        }
+
+        .leader div {
+            text-align: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards; /* Анімація */
+            animation-delay: 1s;
+            width: 200px; /* Задаємо ширину блоку */
+        }
+
+        .leader img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+            border: 3px solid transparent; /* Початкова рамка */
+            padding: 5px;
+            border-radius: 12px; /* Заокруглені краї */
+            transition: all 0.3s ease; /* Плавна анімація при наведенні */
+        }
+
+        .leader img:hover {
+            border-color: #fcd116; /* Зміна кольору рамки при наведенні */
+            transform: scale(1.1); /* Збільшення зображення при наведенні */
+        }
+
+        .leader div:hover .role, .leader div:hover .name {
+            opacity: 1;
+        }
+
+        .role, .name {
+            font-size: 1.1em;
+            color: #fcd116;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .role {
+            margin-top: 5px;
+        }
+
+        .name {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <h1 class="site-title">Керівництво СБУ м. Дніпро</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="Про СБУ.html">Про СБУ</a>
+            <a href="Інформація.html">Інформація</a>
+            <a href="Розшук.html">Розшук</a>
+            <a href="Контакти.html">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Керівництво Служби безпеки України в м. Дніпро</h2>
+            <p>Наше керівництво складається з досвідчених професіоналів, які ведуть роботу в сфері безпеки та захисту громадян.</p>
+        
+            <div class="leader">
+                <div>
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/36.webp" alt="Генерал СБУ">
+                    <div class="role">Генерал СБУ</div>
+                    <div class="name">Роман Дацик</div>
+                </div>
+            </div>
+
+            <div class="leader">
+                <div>
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 1">
+                    <div class="role">Полковник</div>
+                    <div class="name">Вакантно</div>
+                </div>
+                <div>
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 2">
+                    <div class="role">Полковник</div>
+                    <div class="name">Андрій Дацик</div>
+                </div>
+                <div>
+                    <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 3">
+                    <div class="role">Полковник</div>
+                    <div class="name">Вакантно</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.logo, .site-title, nav a');
+            elements.forEach(function(element) {
+                element.classList.add('fadeIn');
+            });
+        });
+    </script>
+</body>
+</html>

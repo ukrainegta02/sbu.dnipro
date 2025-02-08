@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація - СБУ м. Дніпро</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1A2A44;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            margin-top: 10px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fcd116;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1em 0;
+            border-radius: 15px;
+            margin-top: 1em;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 20px;
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 12px;
+            background-color: #003366;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fcd116;
+            color: #003366;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 30px;
+            background-color: #2A3A61;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #1A2A44;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003366;
+            color: #fff;
+        }
+
+        .fadeIn {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .highlight {
+            color: #fcd116;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background-color: #37415C;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .info-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .requirements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .requirements li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .requirements li::before {
+            content: "✅ ";
+            color: #fcd116;
+        }
+
+        .expectations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .expectations li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .expectations li::before {
+            content: "🔹 ";
+            color: #fcd116;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <h1 class="site-title fadeIn">Інформація</h1>
+        <nav>
+            <a href="index.html" class="fadeIn">Головна</a>
+            <a href="Про СБУ.html" class="fadeIn">Про СБУ</a>
+            <a href="Керівництво.html" class="fadeIn">Керівництво</a>
+            <a href="Розшук.html" class="fadeIn">Розшук</a>
+            <a href="Контакти.html" class="fadeIn">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fadeIn">
+            <h2>Набір до лав Служби безпеки України</h2>
+            <p>Шановні громадяни, ми раді повідомити, що <span class="highlight">у неділю, 09.02.2025 о 18:00</span> відбудеться набір до лав Служби безпеки України м. Дніпро. Це важливий крок для всіх, хто хоче стати частиною нашої команди та захищати безпеку України.</p>
+            <p>Запрошуємо усіх, хто має бажання та відповідні здібності, пройти відбір для служби в СБУ. Усі деталі та умови прийому можна дізнатися на нашому офіційному сайті або безпосередньо на місці в день набору.</p>
+        </section>
+
+        <section class="requirements fadeIn">
+            <h2>Вимоги до кандидатів</h2>
+            <ul>
+                <li>Проживання в області не менше 4 років.</li>
+                <li>Чистота перед законом – відсутність активних судимостей.</li>
+                <li>Відсутність залежностей – алкогольної та наркотичної.</li>
+                <li>Базові знання про СБУ та закони України.</li>
+                <li>Позитивний соціальний рейтинг – репутація та громадська активність.</li>
+                <li>Комунікабельність і гарний настрій – вміння працювати в команді та стресостійкість.</li>
+                <li>Фізична підготовка – бажано мати хорошу спортивну форму.</li>
+                <li>Психологічна стійкість – вміння діяти в складних ситуаціях.</li>
+                <li>Готовність до секретності – робота в СБУ передбачає дотримання режиму конфіденційності.</li>
+            </ul>
+        </section>
+
+        <section class="expectations fadeIn">
+            <h2>Що очікує новий співробітник?</h2>
+            <ul>
+                <li>Професійний розвиток – тренінги, навчання та можливість кар'єрного зростання.</li>
+                <li>Стабільність – офіційна зарплата та соціальні гарантії.</li>
+                <li>Секретні операції – участь у боротьбі з тероризмом, корупцією, кіберзлочинністю та шпигунством.</li>
+                <li>Сильний колектив – робота в команді професіоналів.</li>
+                <li>Високий рівень відповідальності – виконання завдань, важливих для безпеки країни.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.logo, .site-title, nav a');
+            elements.forEach(function(element) {
+                element.classList.add('fadeIn');
+            });
+        });
+    </script>
+</body>
+</html>
