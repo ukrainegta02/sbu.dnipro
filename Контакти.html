@@ -150,12 +150,13 @@
             <a href="Керівництво.html">Керівництво</a>
         </nav>
     </header>
-
+    <div>
+        <h4 style="color: #ffffff; font-weight: bold;">Примітка! Для того щоб переглянути контакти керівництва, натисніть на зображення.</h4>
+    </div>
     <main>
-
         <div class="officer-container">
             <div class="general" onclick="toggleInfo('info1')">
-                <h3>Роман Дацик</h3>
+                <h3 style="color: #fcd116;">Роман Дацик</h3>
                 <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/36.webp" alt="Генерал Роман Дацик">
                 <div id="info1" class="info-box">
                     <a href="https://t.me/dat_roman" class="telegram-link" target="_blank">
@@ -163,20 +164,20 @@
                     </a>
                 </div>
             </div>
-
+    
             <div class="colonels">
                 <div class="colonel" onclick="toggleInfo('info2')">
-                    <h4>Андрій Даник</h4>
+                    <h4 style="color: #fcd116;">Андрій Даник</h4>
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник">
                     <div id="info2" class="info-box">
-                        <a href="https://t.me/vacant_1" class="telegram-link" target="_blank">
+                        <a href="https://t.me/horwatets" class="telegram-link" target="_blank">
                             <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> Telegram
                         </a>
                     </div>
                 </div>
-
+    
                 <div class="colonel" onclick="toggleInfo('info3')">
-                    <h4>Полковник</h4>
+                    <h4 style="color: #fcd116;">Полковник</h4>
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник">
                     <div id="info3" class="info-box">
                         <a href="https://t.me/vacant_2" class="telegram-link" target="_blank">
@@ -184,9 +185,9 @@
                         </a>
                     </div>
                 </div>
-
+    
                 <div class="colonel" onclick="toggleInfo('info4')">
-                    <h4>Полковник</h4>
+                    <h4 style="color: #fcd116;">Полковник</h4>
                     <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник">
                     <div id="info4" class="info-box">
                         <a href="https://t.me/vacant_3" class="telegram-link" target="_blank">
@@ -197,11 +198,11 @@
             </div>
         </div>
     </main>
-
+    
     <footer>
-        <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
+        <p style="color: #fcd116; font-weight: bold;">&copy; 2025 Служба безпеки України м. Дніпро</p>
     </footer>
-
+    
     <script>
         function toggleInfo(id) {
             const allInfoBoxes = document.querySelectorAll('.info-box');
@@ -210,10 +211,10 @@
                     box.classList.remove('show-info');
                 }
             });
-
+            
             const infoBox = document.getElementById(id);
             infoBox.classList.toggle('show-info');
         }
     </script>
-</body>
+    
 </html>
