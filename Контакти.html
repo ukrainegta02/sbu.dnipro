@@ -44,6 +44,10 @@
             text-align: center;
             cursor: pointer;
             position: relative;
+            background-color: #1A2A44; /* Темніший фон для контейнера */
+            border-radius: 15px;
+            padding: 20px; /* Відступи навколо зображення */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Легке затемнення навколо */
         }
 
         .general img, .colonel img {
@@ -59,7 +63,7 @@
         .colonels {
             display: flex;
             justify-content: center;
-            gap: 40px; /* Збільшена відстань між полковниками */
+            gap: 40px;
             flex-wrap: wrap;
         }
 
@@ -136,7 +140,6 @@
             color: #003366;
             transform: scale(1.1);
         }
-
     </style>
 </head>
 <body>
@@ -216,5 +219,5 @@
             infoBox.classList.toggle('show-info');
         }
     </script>
-    
+</body>
 </html>
