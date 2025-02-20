@@ -8,14 +8,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1A2A44;
+            background-color: #121a2f;
             color: #ffffff;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #003366;
+            background-color: #002244;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -38,7 +38,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 1em 0;
             border-radius: 15px;
             margin-top: 1em;
@@ -47,23 +47,24 @@
         nav a {
             text-decoration: none;
             margin: 0 20px;
-            color: #fff;
+            color: #ffffff;
             font-weight: 600;
             padding: 12px 25px;
             border-radius: 12px;
-            background-color: #003366;
-            transition: 0.3s ease;
+            background-color: #001a33;
+            transition: 0.3s ease, box-shadow 0.3s ease;
         }
 
         nav a:hover {
             background-color: #fcd116;
-            color: #003366;
+            color: #001a33;
             transform: scale(1.1);
+            box-shadow: 0px 0px 15px #fcd116;
         }
 
         main {
             padding: 30px;
-            background-color: #2A3A61;
+            background-color: #1a233a;
             border-radius: 15px;
             margin: 20px auto;
             max-width: 1200px;
@@ -71,7 +72,7 @@
 
         section {
             padding: 20px;
-            background-color: #1A2A44;
+            background-color: #0f1628;
             border-radius: 12px;
             margin-bottom: 20px;
         }
@@ -79,7 +80,7 @@
         footer {
             text-align: center;
             padding: 15px;
-            background-color: #003366;
+            background-color: #002244;
             color: #fff;
         }
 
@@ -102,52 +103,11 @@
         }
 
         .info-box {
-            background-color: #37415C;
+            background-color: #2c3450;
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
         }
-
-        .info-box h3 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .info-box p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        .requirements ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .requirements li {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .requirements li::before {
-            content: "✅ ";
-            color: #fcd116;
-        }
-
-        .expectations ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .expectations li {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .expectations li::before {
-            content: "🔹 ";
-            color: #fcd116;
-        }
-
     </style>
 </head>
 <body>
@@ -159,14 +119,14 @@
             <a href="Про СБУ.html" class="fadeIn">Про СБУ</a>
             <a href="Керівництво.html" class="fadeIn">Керівництво</a>
             <a href="Розшук.html" class="fadeIn">Розшук</a>
-            <a href="Контакти.html" class="fadeIn">Контакти</a>
+            <a href="(F.A.Q).html" class="fadeIn">Інформація для новобранців (F.A.Q)</a>
         </nav>
     </header>
 
     <main>
         <section class="fadeIn">
             <h2>Набір до лав Служби безпеки України</h2>
-            <p>Шановні громадяни, ми раді повідомити, що <span class="highlight">у неділю, 16.02.2025 о 18:00</span> відбудеться набір до лав Служби безпеки України м. Дніпро. Це важливий крок для всіх, хто хоче стати частиною нашої команди та захищати безпеку України.</p>
+            <p>Шановні громадяни, ми раді повідомити, що <span class="highlight">у неділю, 23.02.2025 о 18:00</span> відбудеться набір до лав Служби безпеки України м. Дніпро. Це важливий крок для всіх, хто хоче стати частиною нашої команди та захищати безпеку України.</p>
             <p>Запрошуємо усіх, хто має бажання та відповідні здібності, пройти відбір для служби в СБУ. Усі деталі та умови прийому можна дізнатися на нашому офіційному сайті або безпосередньо на місці в день набору.</p>
         </section>
 
@@ -197,17 +157,9 @@
         </section>
     </main>
 
+
     <footer>
         <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.logo, .site-title, nav a');
-            elements.forEach(function(element) {
-                element.classList.add('fadeIn');
-            });
-        });
-    </script>
 </body>
 </html>

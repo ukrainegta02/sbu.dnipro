@@ -8,16 +8,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1A2A44; /* Темно-синій фон */
+            background-color: #121a2f;
             color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background-color: #003366; /* Теж темно-синій */
+            background-color: #002244;
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         .logo {
@@ -26,7 +28,7 @@
         }
 
         h1.site-title {
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 2.5em;
             font-weight: bold;
             color: #fcd116;
@@ -36,66 +38,113 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 1em 0;
             border-radius: 15px;
+            margin-top: 1em;
         }
 
         nav a {
             text-decoration: none;
             margin: 0 20px;
-            color: #fff;
+            color: #ffffff;
             font-weight: 600;
             padding: 12px 25px;
             border-radius: 12px;
-            background-color: #003366;
-            transition: 0.3s ease;
+            background-color: #001a33;
+            transition: transform 0.2s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
         }
 
         nav a:hover {
             background-color: #fcd116;
-            color: #003366;
-            transform: scale(1.1);
+            color: #001a33;
+            transform: scale(1.15);
+            box-shadow: 0px 0px 15px #fcd116;
         }
 
         main {
             padding: 30px;
-            background-color: #2A3A61; /* Темно-синій */
-            border-radius: 15px;
+            background-color: #1a233a;
+            border-radius: 20px;
             margin: 20px auto;
             max-width: 1200px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        section {
-            padding: 20px;
-            background-color: #1A2A44; /* Трохи темніший фон */
-            border-radius: 12px;
-            width: 65%;
+        .wanted-container {
+            background-color: #0f1628;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
         }
 
         .wanted-photo {
             max-width: 300px;
-            border: 5px solid #fcd116; /* Рамка навколо фото */
-            border-radius: 15px;
-            display: block;
-            margin-right: 20px; /* Відстань між фото та текстом */
-            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            margin-right: 30px;
+        }
+
+        .wanted-info {
+            color: #E4E4E4;
+            font-size: 1.2em;
+            width: 60%;
+        }
+
+        .wanted-info h2 {
+            color: #fcd116;
+            margin-bottom: 15px;
+        }
+
+        .wanted-info p {
+            margin-bottom: 10px;
+        }
+
+        .proofs-button {
+            background-color: #fcd116;
+            color: #002244;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .proofs-button:hover {
+            background-color: #d4b400;
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #003366;
+            padding: 20px;
+            background-color: #002244;
             color: #fff;
         }
 
-        .person-info {
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
+        /* Styles for mobile devices */
+        @media (max-width: 768px) {
+            .wanted-container {
+                flex-direction: column;
+                align-items: center;
+            }
 
+            .wanted-photo {
+                margin: 20px 0;
+            }
+
+            .wanted-info {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -107,33 +156,25 @@
             <a href="Про СБУ.html">Про СБУ</a>
             <a href="Керівництво.html">Керівництво</a>
             <a href="Інформація.html">Інформація</a>
-            <a href="Контакти.html">Контакти</a>
+            <a href="(F.A.Q).html">Інформація для новобранців (F.A.Q)</a>
         </nav>
     </header>
 
     <main>
-        <img src="https://www.efbm.org/wp-content/uploads/2018/12/united-1.jpg" alt="Фото розшукуваної особи" class="wanted-photo">
-        
-        <section>
-            <h2>Розшукується</h2>
-            <div class="person-info">
-                <p><strong>Ім'я та Прізвище:</strong> --- </p>
-                <p><strong>Номер паспорту:</strong> 0000000 </p>
-                <p><strong>Останнє місце знаходження:</strong> ---- </p>
+        <div class="wanted-container">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/6780.webp" alt="Фото розшукуваної особи" class="wanted-photo">
+            <div class="wanted-info">
+                <h2>Розшукується</h2>
+                <p><strong>Ім'я та Прізвище:</strong> Відсутнє</p>
+                <p><strong>Номер паспорту:</strong> 000000</p>
+                <p><strong>Стаття:</strong> 0.0</p>
+                <button class="proofs-button" onclick="window.location.href='німе' ">Переглянути докази</button>
             </div>
-        </section>
+        </div>
     </main>
 
-    
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.logo, .site-title, nav a');
-            elements.forEach(function(element) {
-                element.classList.add('fadeIn');
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; 2025 Служба безпеки України. Усі права захищені.</p>
+    </footer>
 </body>
 </html>

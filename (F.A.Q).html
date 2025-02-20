@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація - СБУ м. Дніпро</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121a2f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #002244;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            margin-top: 10px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fcd116; /* Жовтий для заголовка */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            border-radius: 15px;
+            margin-top: 1em;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 20px;
+            color: #ffffff; /* Білий для посилань */
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 12px;
+            background-color: #001a33;
+            transition: 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fcd116;
+            color: #001a33;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px #fcd116;
+        }
+
+        main {
+            padding: 30px;
+            background-color: #1a233a;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #0f1628;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            border: none;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        table thead {
+            background-color: #002244;
+        }
+
+        table th,
+        table td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        table th {
+            color: #fcd116; /* Жовтий для заголовків таблиці */
+            font-size: 1.2em;
+        }
+
+        table td {
+            background-color: #1e273b;
+            color: #ccc; /* Білий текст у таблиці */
+        }
+
+        table tr:nth-child(even) td {
+            background-color: #283248;
+        }
+
+        table tr:hover td {
+            background-color: #fcd116;
+            color: #001a33;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #002244;
+            color: #fff;
+        }
+
+        .fadeIn {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .highlight {
+            color: #fcd116;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            padding-right: 5px;
+        }
+
+        .list-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #283248;
+            border-radius: 8px;
+            color: #ffffff; /* Жовтий для списків */
+        }
+
+        .list-item strong {
+            color: #fcd116; /* Білий для важливих частин тексту */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <h1 class="site-title fadeIn">Інформація</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="Про СБУ.html">Про СБУ</a>
+            <a href="Інформація.html">Інформація</a>
+            <a href="Розшук.html">Розшук</a>
+            <a href="Керівництво.html">Керівництво</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fadeIn">
+            <h2>Графік роботи</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дні тижня</th>
+                        <th>Робочі години</th>
+                        <th>Перерва</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Понеділок</td>
+                        <td>09:00 - 21:00</td>
+                        <td>12:00 - 13:00, 17:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Вівторок</td>
+                        <td>09:00 - 21:00</td>
+                        <td>12:00 - 13:00, 17:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Середа</td>
+                        <td>09:00 - 21:00</td>
+                        <td>12:00 - 13:00, 17:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Четвер</td>
+                        <td>09:00 - 21:00</td>
+                        <td>12:00 - 13:00, 17:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>П'ятниця</td>
+                        <td>09:00 - 21:00</td>
+                        <td>12:00 - 13:00, 17:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Субота</td>
+                        <td>10:00 - 20:00</td>
+                        <td>15:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <td>Неділя</td>
+                        <td>11:00 - 19:30</td>
+                        <td>13:00 - 14:00</td>
+                    </tr>
+                    <tr>
+                        <td>Святкові дні</td>
+                        <td>11:00 - 18:00</td>
+                        <td>немає</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="fadeIn">
+            <h2>Звання в СБУ</h2>
+            <ul>
+                <li class="list-item">🔹 <strong>Рядовий склад:</strong> Курсант, Капрал</li>
+                <li class="list-item">🔹 <strong>Сержантський склад:</strong> Сержант, Старший сержант</li>
+                <li class="list-item">🔹 <strong>Офіцерський склад:</strong> Молодший лейтенант, Лейтенант, Старший лейтенант, Капітан, Майор, Підполковник, Полковник, Генерал</li>
+            </ul>
+        </section>
+
+        <section class="fadeIn">
+            <h2>Що очікує новий співробітник? <span class="emoji">🚀</span></h2>
+            <ul>
+                <li class="list-item">🔹 Професійний розвиток – тренінги, навчання та можливість кар'єрного зростання.</li>
+                <li class="list-item">🔹 Стабільність – офіційна зарплата та соціальні гарантії.</li>
+                <li class="list-item">🔹 Секретні операції – участь у боротьбі з тероризмом, корупцією, кіберзлочинністю та шпигунством.</li>
+                <li class="list-item">🔹 Сильний колектив – робота в команді професіоналів.</li>
+                <li class="list-item">🔹 Високий рівень відповідальності – виконання завдань, важливих для безпеки країни.</li>
+            </ul>
+        </section>
+
+        <section class="fadeIn">
+            <h2>Переваги роботи в СБУ <span class="emoji">💼</span></h2>
+            <ul>
+                <li class="list-item">🔹 Кар'єрне зростання та постійний розвиток.</li>
+                <li class="list-item">🔹 Висока зарплата та соціальні пакети.</li>
+                <li class="list-item">🔹 Робота в команді професіоналів з високими стандартами.</li>
+                <li class="list-item">🔹 Можливість брати участь у важливих державних ініціативах.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
+    </footer>
+</body>
+</html>
