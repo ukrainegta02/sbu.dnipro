@@ -4,125 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна - СБУ м. Дніпро</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121a2f;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #002244;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .logo {
-            max-width: 100px;
-            border-radius: 50%;
-        }
-
-        h1.site-title {
-            margin-top: 10px;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fcd116;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1em 0;
-            border-radius: 15px;
-            margin-top: 1em;
-        }
-
-        nav a {
-            text-decoration: none;
-            margin: 0 20px;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 12px;
-            background-color: #001a33;
-            transition: 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #fcd116;
-            color: #001a33;
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px #fcd116;
-        }
-
-        main {
-            padding: 30px;
-            background-color: #1a233a;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 2.2em;
-            color: #fcd116;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            text-decoration: none;
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #fcd116;
-            color: #001a33;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: 0.3s ease, box-shadow 0.3s ease;
-            font-size: 1.2em;
-        }
-
-        .btn:hover {
-            background-color: #001a33;
-            color: #fcd116;
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px #fcd116;
-        }
-
-      
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    max-width: 100px;
+    border-radius: 0%;
+    margin-bottom: 10px;
+}
+
+h1.site-title {
+    font-size: 2.7em;
+    font-weight: 600;
+    color: #00b0ff;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #00b0ff;
+    color: #121212;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.content {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #00b0ff;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00b0ff;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0096db;
+}
+
+/* Адаптивний дизайн */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+}
+</style>
 <body>
     <header>
-        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
-        <h1 class="site-title">Служба безпеки України м. Дніпро</h1>
-        <nav>
-            <a href="Про СБУ.html">Про СБУ</a>
-            <a href="Керівництво.html">Керівництво</a>
-            <a href="Інформація.html">Інформація</a>
-            <a href="Розшук.html">Розшук</a>
-            <a href="(F.A.Q).html">Інформація для новобранців (F.A.Q)</a>
-        </nav>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
+            <h1 class="site-title">Служба безпеки України м. Дніпро</h1>
+            <nav>
+                <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
+                <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
+                <a href="Інформація.html"><i class="fas fa-newspaper"></i> Інформація</a>
+                <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
+                <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h2>Ласкаво просимо на сайт СБУ м. Дніпро</h2>
-        <p>На цьому сайті ви знайдете важливу інформацію про діяльність Служби безпеки України міста Дніпра, а також новини, що стосуються безпеки в регіоні.</p>
-        <a href="Про СБУ.html" class="btn">Дізнатись більше</a>
+        <div class="hero-image">
+        <div class="content">
+            <h2>Ласкаво просимо на сайт СБУ м. Дніпро</h2>
+            <p>На цьому сайті ви знайдете важливу інформацію про діяльність Служби безпеки України міста Дніпра, а також новини, що стосуються безпеки в регіоні.</p>
+            <a href="Про СБУ.html" class="btn">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
+        </div>
     </main>
-
- 
 </body>
 </html>

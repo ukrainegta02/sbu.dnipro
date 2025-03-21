@@ -5,176 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Розшук - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121a2f;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background-color: #002244;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            border-radius: 20px;
-        }
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 20px;
+}
 
-        .logo {
-            max-width: 100px;
-            border-radius: 50%;
-        }
+.logo {
+    max-width: 100px;
+    border-radius: 0%;
+}
 
-        h1.site-title {
-            margin-top: 20px;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fcd116;
-        }
+h1.site-title {
+    margin-top: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00b0ff;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1em 0;
-            border-radius: 15px;
-            margin-top: 1em;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-top: 1em;
+}
 
-        nav a {
-            text-decoration: none;
-            margin: 0 20px;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 12px;
-            background-color: #001a33;
-            transition: transform 0.2s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
-        }
+nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        nav a:hover {
-            background-color: #fcd116;
-            color: #001a33;
-            transform: scale(1.15);
-            box-shadow: 0px 0px 15px #fcd116;
-        }
+nav a:hover {
+    background-color: #00b0ff;
+    color: #121212;
+}
 
-        main {
-            padding: 30px;
-            background-color: #1a233a;
-            border-radius: 20px;
-            margin: 20px auto;
-            max-width: 1200px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+main {
+    padding: 30px;
+    background-color: #1a233a;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
 
-        .wanted-container {
-            background-color: #0f1628;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1000px;
-        }
+.wanted-container {
+    background-color: #0f1628;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .wanted-photo {
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-            margin-right: 30px;
-        }
+.wanted-photo {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    margin-right: 30px;
+}
 
-        .wanted-info {
-            color: #E4E4E4;
-            font-size: 1.2em;
-            width: 60%;
-        }
+.wanted-info {
+    color: #e0e0e0;
+    font-size: 1.2em;
+    width: 60%;
+}
 
-        .wanted-info h2 {
-            color: #fcd116;
-            margin-bottom: 15px;
-        }
+.wanted-info h2 {
+    color: #00b0ff;
+    margin-bottom: 15px;
+}
 
-        .wanted-info p {
-            margin-bottom: 10px;
-        }
+.wanted-info p {
+    margin-bottom: 10px;
+}
 
-        .proofs-button {
-            background-color: #fcd116;
-            color: #002244;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+.proofs-button {
+    background-color: #00b0ff;
+    color: #121212;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .proofs-button:hover {
-            background-color: #d4b400;
-            transform: scale(1.05);
-        }
+.proofs-button:hover {
+    background-color: #0096db;
+    transform: scale(1.05);
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #002244;
-            color: #fff;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #002244;
+    color: #fff;
+}
 
-        /* Styles for mobile devices */
-        @media (max-width: 768px) {
-            .wanted-container {
-                flex-direction: column;
-                align-items: center;
-            }
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    .wanted-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .wanted-photo {
-                margin: 20px 0;
-            }
+    .wanted-photo {
+        margin: 20px 0;
+    }
 
-            .wanted-info {
-                width: 100%;
-            }
-        }
+    .wanted-info {
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>
     <header>
-        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
         <h1 class="site-title">Розшук - СБУ м. Дніпро</h1>
         <nav>
-            <a href="index.html">Головна</a>
-            <a href="Про СБУ.html">Про СБУ</a>
-            <a href="Керівництво.html">Керівництво</a>
-            <a href="Інформація.html">Інформація</a>
-            <a href="(F.A.Q).html">Інформація для новобранців (F.A.Q)</a>
+            <a href="index.html"><i class="fas fa-home"></i> Головна</a>
+            <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
+            <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
+            <a href="Інформація.html"><i class="fas fa-newspaper"></i> Інформація</a>
+            <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
         </nav>
     </header>
 
     <main>
         <div class="wanted-container">
-            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/6780.webp" alt="Фото розшукуваної особи" class="wanted-photo">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/99b81f39-9a4d-48f0-b3e4-37c47d876293.webp" alt="Фото розшукуваної особи" class="wanted-photo">
             <div class="wanted-info">
-                <h2>Розшукується</h2>
-                <p><strong>Ім'я та Прізвище:</strong> Відсутнє</p>
-                <p><strong>Номер паспорту:</strong> 000000</p>
-                <p><strong>Стаття:</strong> 0.0</p>
-                <button class="proofs-button" onclick="window.location.href='німе' ">Переглянути докази</button>
+                <h2>Розшукується</h2> 
+                <p><strong>Ім'я та Прізвище</strong> Одін Бьор</p>
+                <p><strong>Номер паспорту:</strong> 6864080</p>
+                <p><strong>Стаття:</strong> 5.14, 1.3 </p>
+                <button class="proofs-button" onclick="window.location.href= 'https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp'">Переглянути докази</button>
+
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Служба безпеки України. Усі права захищені.</p>
-    </footer>
 </body>
 </html>

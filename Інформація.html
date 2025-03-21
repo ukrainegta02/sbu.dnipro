@@ -5,162 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Інформація - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121a2f;
-            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s ease;
         }
 
         header {
-            background-color: #002244;
+            background-color: #1a1a1a;
             color: #fff;
             padding: 20px 0;
+            border-bottom: 2px solid #00b0ff;
             text-align: center;
-            border-radius: 10px;
         }
 
         .logo {
             max-width: 100px;
-            border-radius: 50%;
+            margin-bottom: 10px;
         }
 
-        h1.site-title {
-            margin-top: 10px;
+        h1 {
+            color: #00b0ff;
             font-size: 2.5em;
-            font-weight: bold;
-            color: #fcd116;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1em 0;
-            border-radius: 15px;
-            margin-top: 1em;
+            background-color: #262626;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         nav a {
+            color: #e0e0e0;
             text-decoration: none;
-            margin: 0 20px;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 12px;
-            background-color: #001a33;
-            transition: 0.3s ease, box-shadow 0.3s ease;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            background-color: #fcd116;
-            color: #001a33;
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px #fcd116;
+            background-color: #00b0ff;
+            color: #121212;
         }
 
         main {
-            padding: 30px;
-            background-color: #1a233a;
-            border-radius: 15px;
-            margin: 20px auto;
             max-width: 1200px;
-        }
-
-        section {
+            margin: 20px auto;
             padding: 20px;
-            background-color: #0f1628;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        footer {
+            background-color: #1a1a1a;
+            border-radius: 5px;
             text-align: center;
-            padding: 15px;
-            background-color: #002244;
-            color: #fff;
         }
 
-        .fadeIn {
-            animation: fadeIn 1s ease-in;
+        .section-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #262626;
+            border-radius: 5px;
+            display: inline-block;
+            width: 100%;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .section-container h2 {
+            color: #00b0ff;
+            margin-bottom: 10px;
         }
 
-        .highlight {
-            color: #fcd116;
+        .counter-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #262626;
+            border-radius: 5px;
+            display: inline-block;
+            width: 50%;
+        }
+
+        .counter {
+            font-size: 2.5em;
+            color: #00b0ff;
             font-weight: bold;
         }
 
-        .info-box {
-            background-color: #2c3450;
-            padding: 15px;
-            border-radius: 10px;
+        .highlight {
+            color: #ff9900;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .contest {
             margin-top: 20px;
+            padding: 20px;
+            background-color: #262626;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .contest img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #00b0ff;
+            color: #121212;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0096db;
+        }
+
+        .important {
+            color: #ff6600;
+            font-weight: bold;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let count = 0;
+            const targetCount = 57;
+            const counterElement = document.getElementById('successful-operations');
+            const increment = targetCount / 100;
+
+            const interval = setInterval(function() {
+                if (count < targetCount) {
+                    count += increment;
+                    counterElement.textContent = Math.floor(count);
+                } else {
+                    counterElement.textContent = targetCount;
+                    clearInterval(interval);
+                }
+            }, 50);
+        });
+    </script>
 </head>
 <body>
     <header>
-        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
-        <h1 class="site-title fadeIn">Інформація</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
+        <h1>Інформація</h1>
         <nav>
-            <a href="index.html" class="fadeIn">Головна</a>
-            <a href="Про СБУ.html" class="fadeIn">Про СБУ</a>
-            <a href="Керівництво.html" class="fadeIn">Керівництво</a>
-            <a href="Розшук.html" class="fadeIn">Розшук</a>
-            <a href="(F.A.Q).html" class="fadeIn">Інформація для новобранців (F.A.Q)</a>
-            <a href="Активні працівники.html" class="fadeIn">Топ-10 працівників</a>
+            <a href="index.html"><i class="fas fa-home"></i> Головна</a>
+            <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
+            <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
+            <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
+            <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
         </nav>
     </header>
 
     <main>
-        <section class="fadeIn">
-            <h2>Набір до лав Служби безпеки України</h2>
-            <p>Шановні громадяни, ми раді повідомити, що <span class="highlight">у неділю, 23.02.2025 о 18:00</span> відбудеться набір до лав Служби безпеки України м. Дніпро. Це важливий крок для всіх, хто хоче стати частиною нашої команди та захищати безпеку України.</p>
-            <p>Запрошуємо усіх, хто має бажання та відповідні здібності, пройти відбір для служби в СБУ. Усі деталі та умови прийому можна дізнатися на нашому офіційному сайті або безпосередньо на місці в день набору.</p>
+        <div class="counter-container">
+            <h3><i class="fas fa-check-circle"></i> За весь час працівники СБУ м. Дніпра провели:</h3>
+            <div class="counter" id="successful-operations">0</div>
+            <h4><i class="fas fa-shield-alt"></i> Успішних спец. операцій</h4>
+        </div>
+
+        <section class="section-container">
+            <h2><i class="fas fa-users"></i> Набір до лав <span class="highlight">Служби безпеки України</span></h2>
+            <p>Шановні громадяни, у неділю 23.03.2025, <span class="important">о 18:00</span> відбудеться набір до лав СБУ м. Дніпро.</p>
+            <p>Запрошуємо усіх охочих пройти відбір та стати частиною нашої команди.</p>
         </section>
 
-        <section class="requirements fadeIn">
-            <h2>Вимоги до кандидатів</h2>
-            <ul>
-                <li>Проживання в області не менше 4 років.</li>
-                <li>Чистота перед законом – відсутність активних судимостей.</li>
-                <li>Відсутність залежностей – алкогольної та наркотичної.</li>
-                <li>Базові знання про СБУ та закони України.</li>
-                <li>Позитивний соціальний рейтинг – репутація та громадська активність.</li>
-                <li>Комунікабельність і гарний настрій – вміння працювати в команді та стресостійкість.</li>
-                <li>Фізична підготовка – бажано мати хорошу спортивну форму.</li>
-                <li>Психологічна стійкість – вміння діяти в складних ситуаціях.</li>
-                <li>Готовність до секретності – робота в СБУ передбачає дотримання режиму конфіденційності.</li>
-            </ul>
-        </section>
-
-        <section class="expectations fadeIn">
-            <h2>Що очікує новий співробітник?</h2>
-            <ul>
-                <li>Професійний розвиток – тренінги, навчання та можливість кар'єрного зростання.</li>
-                <li>Стабільність – офіційна зарплата та соціальні гарантії.</li>
-                <li>Секретні операції – участь у боротьбі з тероризмом, корупцією, кіберзлочинністю та шпигунством.</li>
-                <li>Сильний колектив – робота в команді професіоналів.</li>
-                <li>Високий рівень відповідальності – виконання завдань, важливих для безпеки країни.</li>
-            </ul>
+        <section class="contest">
+            <h2><i class="fas fa-trophy"></i> Конкурс для співробітників СБУ</h2>
+            <p>Хто затримає найбільше правопорушників протягом тижня – отримає <span class="important">3 000 000 грн!</span></p>
+            <p>Деталі та правила участі на форумі.</p>
+            <a href="https://forum.ukraine-gta.com.ua/threads/%D0%A1%D0%91-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8-%D0%BC-%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%B0-%D0%9A%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D1%81.272332/" class="btn"><i class="fas fa-info-circle"></i> Детальніше</a>
         </section>
     </main>
-
-
-    <footer>
-        <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
-    </footer>
 </body>
 </html>

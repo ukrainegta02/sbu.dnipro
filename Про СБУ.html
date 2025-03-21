@@ -5,193 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Про СБУ - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121a2f;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
 
-        header {
-            background-color: #002244;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            border-radius: 20px;
-        }
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 20px;
+}
 
-        .logo {
-            max-width: 100px;
-            border-radius: 50%;
-        }
+.logo {
+    max-width: 100px;
+    border-radius: 0%;
+}
 
-        h1.site-title {
-            margin-top: 20px;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fcd116;
-        }
+h1.site-title {
+    margin-top: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00b0ff;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1em 0;
-            border-radius: 15px;
-            margin-top: 1em;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
-        nav a {
-            text-decoration: none;
-            margin: 0 20px;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 25px;
-            border-radius: 12px;
-            background-color: #001a33;
-            transition: transform 0.2s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
-        }
+nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        nav a:hover {
-            background-color: #fcd116;
-            color: #001a33;
-            transform: scale(1.15);
-            box-shadow: 0px 0px 15px #fcd116;
-        }
+nav a:hover {
+    background-color: #00b0ff;
+    color: #121212;
+}
 
-        main {
-            padding: 30px;
-            background-color: #1a233a;
-            border-radius: 20px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+main {
+    padding: 30px;
+    background-color: #1a233a;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
 
-        section {
-            padding: 20px;
-            background-color: #0f1628;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
+section {
+    padding: 20px;
+    background-color: #0f1628;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #002244;
-            color: #fff;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #002244;
+    color: #fff;
+}
 
-        h2, h3, h4 {
-            color: #fcd116;
-            margin-bottom: 15px;
-        }
+h2, h3, h4 {
+    color: #00b0ff;
+    margin-bottom: 15px;
+}
 
-        p, ul {
-            font-size: 1.1em;
-            color: #E4E4E4;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
+p, ul {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 
-        ul {
-            list-style-type: square;
-            margin-left: 30px;
-        }
+ul {
+    list-style-type: square;
+    margin-left: 30px;
+}
 
-        li {
-            margin-bottom: 10px;
-        }
+li {
+    margin-bottom: 10px;
+}
 
-        strong {
-            color: #fcd116;
-        }
+strong {
+    color: #00b0ff;
+}
 
-        .subdivision-card {
-            background-color: #2c3e50;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
+.subdivision-card {
+    background-color: #2c3e50;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
-        .subdivision-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 15px 25px rgba(255, 215, 0, 0.4);
-        }
+.subdivision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px rgba(0, 176, 255, 0.4);
+}
 
-        .subdivision-card h3 {
-            color: #fcd116;
-            font-size: 1.5em;
-        }
+.subdivision-card h3 {
+    color: #00b0ff;
+    font-size: 1.5em;
+}
 
-        .subdivision-card p {
-            font-size: 1.1em;
-            color: #E4E4E4;
-            margin-bottom: 10px;
-            text-align: justify;
-        }
+.subdivision-card p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    text-align: justify;
+}
 
-        .subdivision-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease, border 0.3s ease;
-        }
+.subdivision-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
 
-        .subdivision-card img:hover {
-            transform: scale(1.05);
-            border: 3px solid #fcd116;
-        }
+.subdivision-card img:hover {
+    transform: scale(1.05);
+    border: 3px solid #00b0ff;
+}
 
-        /* Стилі для мобільних пристроїв */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 0;
-            }
-            nav a {
-                padding: 10px 20px;
-            }
-            main {
-                padding: 20px;
-            }
-            section {
-                padding: 15px;
-            }
-        }
+/* Стилі для мобільних пристроїв */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0;
+    }
+    nav a {
+        padding: 10px 20px;
+    }
+    main {
+        padding: 20px;
+    }
+    section {
+        padding: 15px;
+    }
+}
     </style>
 </head>
 <body>
     <header>
-        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
         <h1 class="site-title">Про Службу безпеки України</h1>
         <nav>
-            <a href="index.html">Головна</a>
-            <a href="Керівництво.html">Керівництво</a>
-            <a href="Інформація.html">Інформація</a>
-            <a href="Розшук.html">Розшук</a>
-            <a href="(F.A.Q).html">Інформація для новобранців (F.A.Q)</a>
+            <a href="index.html"><i class="fas fa-home"></i> Головна</a>
+            <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
+            <a href="Інформація.html"><i class="fas fa-newspaper"></i> Інформація</a>
+            <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
+            <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Загальна інформація про СБУ</h2>
+            <i class="fas fa-info-circle"></i> <h2>Загальна інформація про СБУ</h2>
             <p>Служба безпеки України (СБУ) — це державний орган, який здійснює заходи щодо забезпечення національної безпеки та боротьби з тероризмом, екстремізмом, корупцією та іншими загрозами для державного устрою України. Вона також відповідає за охорону державних таємниць, боротьбу з організованою злочинністю, контррозвідку та кібербезпеку.</p>
         </section>
         
         <section>
-            <h2>Історія створення СБУ</h2>
+            <i class="fas fa-history"></i> <h2>Історія створення СБУ</h2>
             <p>Служба безпеки України була створена 20 березня 1992 року як правонаступник КДБ УРСР. За час свого існування СБУ неодноразово змінювала структуру та напрямки роботи, пристосовуючись до нових викликів часу, таких як боротьба з тероризмом та кіберзлочинністю.</p>
             <p>Основною метою СБУ є забезпечення безпеки та захисту інтересів держави і громадян України, а також протидія незаконним діям, які загрожують національній безпеці.</p>
         </section>
         
         <section>
-            <h2>Основні досягнення та операції СБУ</h2>
+            <i class="fas fa-tasks"></i> <h2>Основні досягнення та операції СБУ</h2>
             <ul>
                 <li><strong>Операція «Захист кордонів»</strong>: СБУ активно проводить операції для захисту національних кордонів та боротьби з контрабандою і незаконними перетинами кордону.</li>
                 <li><strong>Знищення терористичних угруповань</strong>: Успішні операції з нейтралізації терористичних груп на території України та за її межами.</li>
@@ -200,7 +198,7 @@
         </section>
         
         <section>
-            <h2>Структура СБУ</h2>
+            <i class="fas fa-sitemap"></i> <h2>Структура СБУ</h2>
             <p>СБУ складається з кількох основних підрозділів, кожен з яких відповідає за конкретні аспекти безпеки:</p>
             <ul>
                 <li><strong>Центр спеціальних операцій «Альфа»</strong>: Елітний підрозділ для виконання найскладніших завдань, зокрема, захоплення заручників і боротьби з тероризмом.</li>
@@ -211,7 +209,7 @@
         </section>
         
         <section>
-            <h2>Права та обов'язки співробітників СБУ</h2>
+            <i class="fas fa-user-shield"></i> <h2>Права та обов'язки співробітників СБУ</h2>
             <p>Співробітники СБУ мають право здійснювати розслідування та операції для забезпечення національної безпеки, а також виконувати адміністративні, оперативно-розшукові та інші заходи в межах своїх повноважень.</p>
             <p>Обов'язки співробітників СБУ включають:</p>
             <ul>
@@ -223,17 +221,16 @@
         </section>
         
         <section>
-            <h2>Технічне оснащення та інновації СБУ</h2>
+            <i class="fas fa-tools"></i> <h2>Технічне оснащення та інновації СБУ</h2>
             <p>СБУ активно впроваджує сучасні технології для забезпечення безпеки країни. Це включає використання новітніх систем моніторингу, аналітичних інструментів, системи кібербезпеки та дронів для проведення спецоперацій.</p>
             <p>Також ведеться активна робота по розвитку штучного інтелекту для відслідковування кіберзагроз та антишахрайських заходів в цифровому середовищі.</p>
         </section>
         
         <section>
-            <h2>Співпраця з міжнародними організаціями</h2>
+            <i class="fas fa-globe"></i> <h2>Співпраця з міжнародними організаціями</h2>
             <p>СБУ активно співпрацює з міжнародними організаціями, такими як Інтерпол, Європейський Союз, а також з правоохоронними органами інших держав для боротьби з транснаціональними загрозами, зокрема в сфері тероризму та кіберзлочинності.</p>
             <p>Міжнародна співпраця дозволяє СБУ отримувати важливу розвідку та підтримку у боротьбі з глобальними загрозами.</p>
         </section>
-        
     </main>
 
   

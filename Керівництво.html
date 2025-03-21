@@ -3,204 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Керівництво - СБУ м. Дніпро</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Керівництво СБУ м. Дніпро</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #121a2f;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .leader-section {
+            margin-bottom: 40px;
+        }
+        .leader-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px 0;
+            width: 90%;
+            max-width: 600px;
+        }
+        .leader-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-right: 30px;
+            object-fit: cover;
+        }
+        .leader-info {
+            flex-grow: 1;
+        }
+        .leader-info h3 {
+            color: #00b0ff;
+            margin-bottom: 10px;
+        }
+        .leader-info p {
+            margin: 5px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #262626;
+            padding: 15px 0;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #e0e0e0;
+            padding: 15px 25px;
+            margin: 0 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #00b0ff;
+            color: #121212;
+        }
+        .leader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-header {
-    background-color: #002244;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.logo {
+        .logo {
     max-width: 100px;
-    border-radius: 50%;
+    border-radius: 0%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-h1.site-title {
-    margin-top: 20px;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fcd116;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1em 0;
-    border-radius: 15px;
-    margin-top: 1em;
-}
-
-nav a {
-    text-decoration: none;
-    margin: 0 20px;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 12px 25px;
-    border-radius: 12px;
-    background-color: #001a33;
-    transition: transform 0.2s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #fcd116;
-    color: #001a33;
-    transform: scale(1.15);
-    box-shadow: 0px 0px 15px #fcd116;
-}
-
-main {
-    padding: 30px;
-    background-color: #1a233a;
-    border-radius: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-}
-
-section {
-    padding: 20px;
-    background-color: #0f1628;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Контейнери для керівництва */
-.leaders {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.leader-card {
-    background: linear-gradient(145deg, #2c3e50, #34495e);
-    padding: 20px;
-    border-radius: 15px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.leader-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 25px rgba(255, 215, 0, 0.4);
-}
-
-.leader-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease, border 0.3s ease;
-}
-
-.leader-card:hover img {
-    transform: scale(1.05);
-    border: 3px solid #fcd116;
-}
-
-.leader-info {
-    margin-top: 15px;
-}
-
-.role {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #fcd116;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
-
-.name {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #002244;
-    color: #fff;
-}
-
-
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://yt3.googleusercontent.com/yPcccdKZOmymGcVVw8N5mR1oF30Bx8G9ats3XsCV9UQDK8L0Nm1fan4cN2Ji8GV0ByiNOOB4sA=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
-        <h1 class="site-title">Керівництво СБУ м. Дніпро</h1>
-        <nav>
-            <a href="index.html">Головна</a>
-            <a href="Про СБУ.html">Про СБУ</a>
-            <a href="Інформація.html">Інформація</a>
-            <a href="Розшук.html">Розшук</a>
-            <a href="(F.A.Q).html">Інформація для новобранців (F.A.Q)</a>
-        </nav>
-    </header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
+    <h1>Керівництво Служби безпеки України м. Дніпро</h1>
 
-    <main>
-        <section>
-            <h2>Керівництво Служби безпеки України в м. Дніпро</h2>
-            <p>Наше керівництво складається з досвідчених професіоналів, які ведуть роботу в сфері безпеки та захисту громадян.</p>
-        </section>
-    
-        <div class="leaders">
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Головна</a>
+        <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
+        <a href="Інформація.html"><i class="fas fa-newspaper"></i> Інформація</a>
+        <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
+        <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
+    </nav>
+
+    <div class="leader-section">
+        <h2>Генерал</h2>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/36.webp" alt="Генерал СБУ">
+            <div class="leader-info">
+                <h3>Роман Дацик</h3>
+                <p><i class="fas fa-user-shield"></i> Генерал Служби Безпеки України м. Дніпра</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leader-section">
+        <h2>Керівники</h2>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник СБУ">
+            <div class="leader-info">
+                <h3>Андрій Ашваганда</h3>
+                <p><i class="fas fa-user-secret"></i> Керівник Контррозвідки</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Полковник СБУ">
+            <div class="leader-info">
+                <h3>Юра Хохлов</h3>
+                <p><i class="fas fa-users-cog"></i> Керівник ЦСО "Альфа"</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник СБУ">
+            <div class="leader-info">
+                <h3>Вакантно</h3>
+                <p><i class="fas fa-gavel"></i> Керівник ДБР</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leader-section">
+        <h2>Начальники</h2>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Підполковник СБУ">
+            <div class="leader-info">
+                <h3>Владислав Малюк</h3>
+                <p><i class="fas fa-user-secret"></i> Начальник Контррозвідки</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Підполковник СБУ">
+            <div class="leader-info">
+                <h3>Данило Мавдюк</h3>
+                <p><i class="fas fa-users-cog"></i> Начальник ЦСО "A"</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Підполковник СБУ">
+            <div class="leader-info">
+                <h3>Микола Хохлов</h3>
+                <p><i class="fas fa-gavel"></i> Начальник ДБР</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Підполковник СБУ">
+            <div class="leader-info">
+                <h3>Ілля Остапюк</h3>
+                <p><i class="fas fa-shield-alt"></i> Начальник СП "Титан"</p>
+            </div>
+        </div>
+        <div class="leader-card">
+            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp" alt="Підполковник СБУ">
+            <div class="leader-info">
+                <h3>Ілля Таратута</h3>
+                <p><i class="fas fa-user-tie"></i> Начальник НА</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leader-section">
+        <h2>Заступники Начальників</h2>
+        <div class="leader-container">
             <div class="leader-card">
-                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/36.webp" alt="Генерал СБУ">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/33.webp" alt="Майор СБУ">
                 <div class="leader-info">
-                    <div class="role">Генерал</div>
-                    <div class="name">Роман Дацик</div>
+                    <h3>Сашик Іванов</h3>
+                    <p><i class="fas fa-users-cog"></i> Зас. Нач. ЦСО "А"</p>
                 </div>
             </div>
-    
             <div class="leader-card">
-                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 1">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/33.webp" alt="Майор СБУ">
                 <div class="leader-info">
-                    <div class="role">Полковник</div>
-                    <div class="name">Андрійко Дацик</div>
+                    <h3>Вакантно</h3>
+                    <p><i class="fas fa-gavel"></i> Зас. Нач. ДБР</p>
                 </div>
             </div>
-    
             <div class="leader-card">
-                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 2">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/33.webp" alt="Майор СБУ">
                 <div class="leader-info">
-                    <div class="role">Полковник</div>
-                    <div class="name">Андрій Даник</div>
+                    <h3>Вакантно</h3>
+                    <p><i class="fas fa-user-tie"></i> Зас. Нач. НА</p>
                 </div>
             </div>
-    
             <div class="leader-card">
-                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/34.webp" alt="Полковник 3">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/33.webp" alt="Майор СБУ">
                 <div class="leader-info">
-                    <div class="role">Полковник</div>
-                    <div class="name">Одін Бьор</div>
+                    <h3>Андрійко Дацик</h3>
+                    <p><i class="fas fa-shield-alt"></i> Зас. Нач. "Титан"</p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/33.webp" alt="Майор СБУ">
+                <div class="leader-info">
+                    <h3>Денис Авраменко</h3>
+                    <p><i class="fas fa-user-secret"></i> Зас. Нач. Контррозвідки</p>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Служба безпеки України м. Дніпро</p>
-    </footer>
+    </div>
 </body>
 </html>
