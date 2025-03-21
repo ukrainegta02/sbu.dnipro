@@ -4,94 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Інформація - СБУ м. Дніпро</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://mil.in.ua/wp-content/uploads/2020/10/original-fd52b4046d334c2f0803d8f8ec890272.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 20px 0;
-            border-bottom: 2px solid #00b0ff;
-            text-align: center;
+            background: #0000009d;
+            padding: 60px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            animation: fadeInDown 1s ease-out;
         }
 
         .logo {
-            max-width: 100px;
-            margin-bottom: 10px;
+            max-width: 120px;
+            border-radius: 0%;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
-        h1 {
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        h1.site-title {
+            font-size: 3em;
+            font-weight: 700;
             color: #00b0ff;
-            font-size: 2.5em;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 176, 255, 0.5);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #262626;
-            padding: 10px;
-            border-radius: 5px;
+            align-items: center;
+            background: rgba(38, 38, 38, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav a {
-            color: #e0e0e0;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: 0.3s;
+            color: #e0e0e0;
+            padding: 12px 25px;
+            margin: 0 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         nav a:hover {
-            background-color: #00b0ff;
-            color: #121212;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+        }
+
+        nav a i {
+            margin-right: 10px;
         }
 
         main {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .section-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #262626;
-            border-radius: 5px;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .section-container h2 {
-            color: #00b0ff;
-            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 15px;
+            max-width: 1300px;
+            margin: 30px auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
         }
 
         .counter-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #262626;
-            border-radius: 5px;
-            display: inline-block;
-            width: 50%;
+            width: 100%;
+            padding: 30px;
+            background: rgba(15, 22, 40, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .counter-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter-container h3 {
+            font-size: 1.8em;
+            color: #00b0ff;
+            margin-bottom: 15px;
         }
 
         .counter {
-            font-size: 2.5em;
+            font-size: 3em;
             color: #00b0ff;
             font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
+        }
+
+        .counter-container h4 {
+            font-size: 1.5em;
+            color: #e0e0e0;
+            margin-top: 10px;
+        }
+
+        .section-container {
+            width: 100%;
+            padding: 30px;
+            background: rgba(15, 22, 40, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .section-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-container h2 {
+            font-size: 2.5em;
+            color: #00b0ff;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
+        }
+
+        .section-container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contest {
+            width: 100%;
+            padding: 30px;
+            background: rgba(15, 22, 40, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contest:hover {
+            transform: translateY(-5px);
+        }
+
+        .contest h2 {
+            font-size: 2.5em;
+            color: #00b0ff;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
+        }
+
+        .contest p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .highlight {
@@ -100,78 +192,178 @@
             text-decoration: underline;
         }
 
-        .contest {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #262626;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .contest img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #00b0ff;
-            color: #121212;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #0096db;
-        }
-
         .important {
             color: #ff6600;
             font-weight: bold;
         }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0096db, #007bb5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 176, 255, 0.6);
+        }
+
+        .btn i {
+            margin-left: 10px;
+        }
+
+        /* Анімації */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+
+            h1.site-title {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav a {
+                margin: 8px 0;
+            }
+
+            .counter-container h3,
+            .section-container h2,
+            .contest h2 {
+                font-size: 1.8em;
+            }
+
+            .counter {
+                font-size: 2em;
+            }
+
+            .counter-container h4 {
+                font-size: 1.2em;
+            }
+
+            .section-container p,
+            .contest p {
+                font-size: 1em;
+            }
+
+            .counter-container > div {
+                flex-direction: column;
+            }
+
+            .counter-container > div > div {
+                margin: 15px 0;
+            }
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            let count = 0;
-            const targetCount = 57;
-            const counterElement = document.getElementById('successful-operations');
-            const increment = targetCount / 100;
+            // Лічильник для спецоперацій
+            let opsCount = 0;
+            const opsTarget = 57;
+            const opsCounter = document.getElementById('successful-operations');
+            const opsIncrement = opsTarget / 100;
+
+            // Лічильник для затримань
+            let arrestCount = 0;
+            const arrestTarget = 360;
+            const arrestCounter = document.getElementById('arrests');
+            const arrestIncrement = arrestTarget / 100;
+
+            // Лічильник для зброї
+            let weaponCount = 0;
+            const weaponTarget = 4000;
+            const weaponCounter = document.getElementById('weapons');
+            const weaponIncrement = weaponTarget / 100;
 
             const interval = setInterval(function() {
-                if (count < targetCount) {
-                    count += increment;
-                    counterElement.textContent = Math.floor(count);
-                } else {
-                    counterElement.textContent = targetCount;
+                // Спецоперації
+                if (opsCount < opsTarget) {
+                    opsCount += opsIncrement;
+                    opsCounter.textContent = Math.floor(opsCount);
+                }
+
+                // Затримання
+                if (arrestCount < arrestTarget) {
+                    arrestCount += arrestIncrement;
+                    arrestCounter.textContent = Math.floor(arrestCount) + '+';
+                }
+
+                // Зброя
+                if (weaponCount < weaponTarget) {
+                    weaponCount += weaponIncrement;
+                    weaponCounter.textContent = Math.floor(weaponCount) + '+';
+                }
+
+                // Зупинка інтервалу коли всі лічильники досягнуть цілей
+                if (opsCount >= opsTarget && arrestCount >= arrestTarget && weaponCount >= weaponTarget) {
+                    opsCounter.textContent = opsTarget;
+                    arrestCounter.textContent = arrestTarget + '+';
+                    weaponCounter.textContent = weaponTarget + '+';
                     clearInterval(interval);
                 }
-            }, 30);
+            }, 50);
         });
     </script>
 </head>
 <body>
     <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
-        <h1>Інформація</h1>
-        <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Головна</a>
-            <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
-            <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
-            <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
-            <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
-        </nav>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
+            <h1 class="site-title">Інформація - СБУ м. Дніпро</h1>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Головна</a>
+                <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
+                <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
+                <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
+                <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
+            </nav>
+        </div>
     </header>
 
     <main>
         <div class="counter-container">
-            <h3><i class="fas fa-check-circle"></i> За весь час працівники СБУ м. Дніпра провели:</h3>
-            <div class="counter" id="successful-operations">0</div>
-            <h4><i class="fas fa-shield-alt"></i> Успішних спец. операцій</h4>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="flex: 1; margin: 0 15px;">
+                    <h3><i class="fas fa-check-circle"></i> Спецоперації</h3>
+                    <div class="counter" id="successful-operations">0</div>
+                    <h4>Проведено</h4>
+                </div>
+                <div style="flex: 1; margin: 0 15px;">
+                    <h3><i class="fas fa-handcuffs"></i> Затримання</h3>
+                    <div class="counter" id="arrests">0</div>
+                    <h4>Здійснено</h4>
+                </div>
+                <div style="flex: 1; margin: 0 15px;">
+                    <h3><i class="fas fa-gun"></i> Зброя</h3>
+                    <div class="counter" id="weapons">0</div>
+                    <h4>Вилучено</h4>
+                </div>
+            </div>
         </div>
 
         <section class="section-container">
@@ -184,7 +376,9 @@
             <h2><i class="fas fa-trophy"></i> Конкурс для співробітників СБУ</h2>
             <p>Хто затримає найбільше правопорушників протягом тижня – отримає <span class="important">3 000 000 грн!</span></p>
             <p>Деталі та правила участі на форумі.</p>
-            <a href="https://forum.ukraine-gta.com.ua/threads/%D0%A1%D0%91-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8-%D0%BC-%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%B0-%D0%9A%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D1%81.272332/" class="btn"><i class="fas fa-info-circle"></i> Детальніше</a>
+            <a href="https://forum.ukraine-gta.com.ua/threads/%D0%A1%D0%91-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8-%D0%BC-%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%B0-%D0%9A%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D1%81.272332/" class="btn">
+                <i class="fas fa-info-circle"></i> Детальніше
+            </a>
         </section>
     </main>
 </body>

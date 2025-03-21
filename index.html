@@ -5,136 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unian.net/photos/2022_03/thumb_files/1200_0_1646932312-5206.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #0000009d; /* Чорна шапка */
+            padding: 60px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            max-width: 120px;
+            border-radius: 0%;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        h1.site-title {
+            font-size: 3em;
+            font-weight: 700;
+            color: #00b0ff;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 176, 255, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(38, 38, 38, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #e0e0e0;
+            padding: 12px 25px;
+            margin: 0 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+        }
+
+        nav a i {
+            margin-right: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: rgba(26, 26, 26, 0.9); /* Напівпрозорий фон для контенту */
+            border-radius: 15px;
+            max-width: 1300px;
+            margin: 30px auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #00b0ff;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0096db, #007bb5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 176, 255, 0.6);
+        }
+
+        .btn i {
+            margin-left: 10px;
+        }
+
+        /* Анімації */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+
+            h1.site-title {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav a {
+                margin: 8px 0;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease;
-}
-
-header {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #333;
-    position: relative;
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    max-width: 100px;
-    border-radius: 0%;
-    margin-bottom: 10px;
-}
-
-h1.site-title {
-    font-size: 2.7em;
-    font-weight: 600;
-    color: #00b0ff;
-    margin-bottom: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #262626;
-    padding: 10px 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #e0e0e0;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #00b0ff;
-    color: #121212;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    background-color: #1a1a1a;
-    border-radius: 5px;
-    max-width: 1200px;
-    margin: 20px auto;
-}
-
-.hero-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.content {
-    text-align: center;
-}
-
-h2 {
-    font-size: 2em;
-    color: #00b0ff;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #00b0ff;
-    color: #121212;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0096db;
-}
-
-/* Адаптивний дизайн */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px 0;
-    }
-}
-</style>
 <body>
     <header>
         <div class="header-content">
@@ -151,10 +195,9 @@ p {
     </header>
 
     <main>
-        <div class="hero-image">
         <div class="content">
             <h2>Ласкаво просимо на сайт СБУ м. Дніпро</h2>
-            <p>На цьому сайті ви знайдете важливу інформацію про діяльність Служби безпеки України міста Дніпра, а також новини, що стосуються безпеки в регіоні.</p>
+            <p>Цей сайт створено для інформування громадян про діяльність Служби безпеки України в місті Дніпро. Тут ви знайдете актуальні новини, інформацію про керівництво, розшукові заходи, а також дані про наших найкращих працівників. Наша мета — забезпечити прозорість роботи СБУ та сприяти безпеці регіону.</p>
             <a href="Про СБУ.html" class="btn">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
         </div>
     </main>
