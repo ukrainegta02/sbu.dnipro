@@ -6,34 +6,37 @@
     <title>Про СБУ - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-       body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://novynarnia.com/wp-content/uploads/2018/12/SBU.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative;
-}
-        /* Видалено затемнення фону (body::before) для прозорості */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://novynarnia.com/wp-content/uploads/2018/12/SBU.jpg') no-repeat center center fixed !important;
+            background-size: cover !important;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
 
         .overlay {
-            background: rgba(0, 0, 0, 0.603); /* Напівпрозорий шар для читабельності */
+            background: rgba(0, 0, 0, 0.603);
             min-height: 100vh;
             position: relative;
         }
 
         header {
-    background: #000000af;
-    background-image: url('https://i.imgur.com/Esd98nb.png');
-    background-size: cover; /* Щоб зображення покривало весь фон */
-    background-position: center; /* Центрування зображення */
-    background-repeat: no-repeat; /* Щоб зображення не повторювалось */
-    padding: 60px 0;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
+            background: #000000af;
+            background-image: url('https://i.imgur.com/Esd98nb.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            min-height: 100vh; /* Шапка займає весь екран */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .header-content {
             display: flex;
@@ -42,6 +45,7 @@
             max-width: 1300px;
             margin: 0 auto;
             animation: fadeInDown 1s ease-out;
+            position: relative;
         }
 
         .logo {
@@ -62,13 +66,6 @@
             margin-bottom: 25px;
             text-shadow: 2px 2px 8px rgba(0, 176, 255, 0.5);
             position: relative;
-        }
-
-        h1.site-title::before {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-right: 10px;
-            color: #00b0ff;
         }
 
         nav {
@@ -106,25 +103,85 @@
             margin-right: 10px;
         }
 
-        nav a:nth-child(1)::before { content: '\f015'; } /* Дім */
-        nav a:nth-child(2)::before { content: '\f0c0'; } /* Люди */
-        nav a:nth-child(3)::before { content: '\f1ea'; } /* Газета */
-        nav a:nth-child(4)::before { content: '\f002'; } /* Пошук */
-        nav a:nth-child(5)::before { content: '\f091'; } /* Трофей */
+        nav a:nth-child(1)::before { content: '\f015'; }
+        nav a:nth-child(2)::before { content: '\f0c0'; }
+        nav a:nth-child(3)::before { content: '\f1ea'; }
+        nav a:nth-child(4)::before { content: '\f002'; }
+        nav a:nth-child(5)::before { content: '\f091'; }
+
+        /* Стилі для стрілочки, створеної через CSS */
+        .header-arrow-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .header-arrow {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            animation: bounce 1.5s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .header-arrow::before,
+        .header-arrow::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            background: #00b0ff;
+            top: 18px;
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(0, 176, 255, 0.5);
+        }
+
+        .header-arrow::before {
+            left: 4px;
+            transform: rotate(45deg);
+        }
+
+        .header-arrow::after {
+            right: 4px;
+            transform: rotate(-45deg);
+        }
+
+        .header-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
 
         main {
             padding: 40px;
-            background: rgba(26, 26, 26, 0.9); /* Напівпрозорий фон для контенту */
+            background: rgba(26, 26, 26, 0.9);
             border-radius: 15px;
             max-width: 1300px;
             margin: 30px auto;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.63);
             animation: fadeInUp 1s ease-out;
+            opacity: 0; /* Спочатку вміст прихований */
+            transition: opacity 0.5s ease-out;
+        }
+
+        main.active {
+            opacity: 1; /* Вміст стає видимим */
         }
 
         section {
             padding: 20px;
-            background: rgba(18, 38, 88, 0.219); /* Напівпрозорий фон для секцій */
+            background: rgba(18, 38, 88, 0.219);
             border-radius: 12px;
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -151,17 +208,17 @@
             color: #00b0ff;
         }
 
-        h2:nth-child(1)::before { content: '\f3ed'; } /* Щит */
-        h2:nth-child(2)::before { content: '\f1da'; } /* Історія */
-        h2:nth-child(3)::before { content: '\f0ae'; } /* Завдання */
-        h2:nth-child(4)::before { content: '\f0e8'; } /* Структура */
-        h2:nth-child(5)::before { content: '\f24e'; } /* Закон */
-        h2:nth-child(6)::before { content: '\f0ac'; } /* Глобус */
-        h2:nth-child(7)::before { content: '\f0ad'; } /* Інструменти */
-        h2:nth-child(8)::before { content: '\f0fb'; } /* Літак */
-        h2:nth-child(9)::before { content: '\f234'; } /* Новий користувач */
-        h2:nth-child(10)::before { content: '\f005'; } /* Зірка */
-        h2:nth-child(11)::before { content: '\f0b1'; } /* Портфель */
+        h2:nth-child(1)::before { content: '\f3ed'; }
+        h2:nth-child(2)::before { content: '\f1da'; }
+        h2:nth-child(3)::before { content: '\f0ae'; }
+        h2:nth-child(4)::before { content: '\f0e8'; }
+        h2:nth-child(5)::before { content: '\f24e'; }
+        h2:nth-child(6)::before { content: '\f0ac'; }
+        h2:nth-child(7)::before { content: '\f0ad'; }
+        h2:nth-child(8)::before { content: '\f0fb'; }
+        h2:nth-child(9)::before { content: '\f234'; }
+        h2:nth-child(10)::before { content: '\f005'; }
+        h2:nth-child(11)::before { content: '\f0b1'; }
 
         h3 {
             font-size: 1.5em;
@@ -239,105 +296,35 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Адаптивність */
         @media (max-width: 1024px) {
-            h1.site-title {
-                font-size: 2.5em;
-            }
-
-            nav a {
-                padding: 10px 20px;
-                margin: 0 10px;
-            }
-
-            main {
-                padding: 30px;
-            }
+            h1.site-title { font-size: 2.5em; }
+            nav a { padding: 10px 20px; margin: 0 10px; }
+            main { padding: 30px; }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 40px 20px;
-            }
-
-            h1.site-title {
-                font-size: 2em;
-            }
-
-            nav {
-                flex-direction: column;
-                padding: 10px 0;
-            }
-
-            nav a {
-                margin: 8px 0;
-                padding: 10px 15px;
-            }
-
-            main {
-                padding: 20px;
-                margin: 20px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-
-            p, ul {
-                font-size: 1em;
-            }
-
-            .subdivision-card {
-                padding: 15px;
-            }
+            header { padding: 40px 20px; }
+            h1.site-title { font-size: 2em; }
+            nav { flex-direction: column; padding: 10px 0; }
+            nav a { margin: 8px 0; padding: 10px 15px; }
+            main { padding: 20px; margin: 20px; }
+            h2 { font-size: 1.8em; }
+            p, ul { font-size: 1em; }
+            .subdivision-card { padding: 15px; }
         }
 
         @media (max-width: 480px) {
-            h1.site-title {
-                font-size: 1.5em;
-            }
-
-            .logo {
-                max-width: 80px;
-            }
-
-            nav a {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            main {
-                padding: 15px;
-                margin: 10px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            h3 {
-                font-size: 1.2em;
-            }
-
-            p, ul {
-                font-size: 0.9em;
-            }
-
-            section {
-                padding: 15px;
-            }
-
-            .subdivision-card {
-                padding: 10px;
-            }
-
-            .subdivision-card h3 {
-                font-size: 1.2em;
-            }
-
-            .subdivision-card p {
-                font-size: 0.9em;
-            }
+            h1.site-title { font-size: 1.5em; }
+            .logo { max-width: 80px; }
+            nav a { padding: 8px 10px; font-size: 14px; }
+            main { padding: 15px; margin: 10px; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+            p, ul { font-size: 0.9em; }
+            section { padding: 15px; }
+            .subdivision-card { padding: 10px; }
+            .subdivision-card h3 { font-size: 1.2em; }
+            .subdivision-card p { font-size: 0.9em; }
         }
     </style>
 </head>
@@ -354,10 +341,13 @@
                     <a href="Розшук.html">Розшук</a>
                     <a href="Активні працівники.html">Топ-10 працівників</a>
                 </nav>
+                <div class="header-arrow-container">
+                    <div class="header-arrow"></div>
+                </div>
             </div>
         </header>
 
-        <main>
+        <main id="main-content">
             <section>
                 <h2>Служба безпеки України (СБУ): Детальний огляд</h2>
                 <p>Служба безпеки України (СБУ) — це ключовий державний орган, який забезпечує національну безпеку України, захищає її суверенітет, територіальну цілісність та інтереси громадян.</p>
@@ -484,5 +474,43 @@
             </section>
         </main>
     </div>
+
+    <script>
+        const main = document.querySelector('main');
+        const arrow = document.querySelector('.header-arrow');
+        let isContentVisible = false;
+
+        // Функція для показу вмісту
+        function showContent(scroll = false) {
+            if (!isContentVisible) {
+                main.classList.add('active');
+                arrow.classList.add('active');
+                isContentVisible = true;
+
+                // Прокрутка до вмісту, якщо викликано через клік
+                if (scroll) {
+                    setTimeout(() => {
+                        document.querySelector('#main-content').scrollIntoView({ behavior: 'smooth' });
+                    }, 500); // Затримка для завершення анімації
+                }
+            }
+        }
+
+        // Обробка кліка на стрілочку
+        document.querySelector('.header-arrow-container').addEventListener('click', () => {
+            showContent(true);
+        });
+
+        // Обробка прокрутки
+        window.addEventListener('scroll', () => {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const scrollPosition = window.scrollY;
+
+            // Якщо користувач прокрутив вниз більше, ніж висота шапки
+            if (scrollPosition > headerHeight - 50 && !isContentVisible) {
+                showContent(false);
+            }
+        });
+    </script>
 </body>
 </html>
