@@ -6,21 +6,34 @@
     <title>Про СБУ - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); /* Градієнтний фон */
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://novynarnia.com/wp-content/uploads/2018/12/SBU.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+        /* Видалено затемнення фону (body::before) для прозорості */
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.603); /* Напівпрозорий шар для читабельності */
+            min-height: 100vh;
+            position: relative;
         }
 
         header {
-            background: #000; /* Чорна шапка */
-            padding: 60px 0;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
+    background: #000000af;
+    background-image: url('https://i.imgur.com/Esd98nb.png');
+    background-size: cover; /* Щоб зображення покривало весь фон */
+    background-position: center; /* Центрування зображення */
+    background-repeat: no-repeat; /* Щоб зображення не повторювалось */
+    padding: 60px 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
 
         .header-content {
             display: flex;
@@ -48,6 +61,14 @@
             color: #00b0ff;
             margin-bottom: 25px;
             text-shadow: 2px 2px 8px rgba(0, 176, 255, 0.5);
+            position: relative;
+        }
+
+        h1.site-title::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: #00b0ff;
         }
 
         nav {
@@ -59,7 +80,7 @@
             padding: 15px 0;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.37);
         }
 
         nav a {
@@ -70,6 +91,7 @@
             border-radius: 8px;
             transition: all 0.3s ease;
             font-weight: 500;
+            position: relative;
         }
 
         nav a:hover {
@@ -78,26 +100,35 @@
             box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
         }
 
-        nav a i {
+        nav a::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             margin-right: 10px;
         }
 
+        nav a:nth-child(1)::before { content: '\f015'; } /* Дім */
+        nav a:nth-child(2)::before { content: '\f0c0'; } /* Люди */
+        nav a:nth-child(3)::before { content: '\f1ea'; } /* Газета */
+        nav a:nth-child(4)::before { content: '\f002'; } /* Пошук */
+        nav a:nth-child(5)::before { content: '\f091'; } /* Трофей */
+
         main {
             padding: 40px;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(26, 26, 26, 0.9); /* Напівпрозорий фон для контенту */
             border-radius: 15px;
             max-width: 1300px;
             margin: 30px auto;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.63);
             animation: fadeInUp 1s ease-out;
         }
 
         section {
             padding: 20px;
-            background: rgba(15, 22, 40, 0.8);
+            background: rgba(18, 38, 88, 0.219); /* Напівпрозорий фон для секцій */
             border-radius: 12px;
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         section:hover {
@@ -110,12 +141,40 @@
             color: #00b0ff;
             margin-bottom: 25px;
             font-weight: 600;
+            position: relative;
         }
+
+        h2::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: #00b0ff;
+        }
+
+        h2:nth-child(1)::before { content: '\f3ed'; } /* Щит */
+        h2:nth-child(2)::before { content: '\f1da'; } /* Історія */
+        h2:nth-child(3)::before { content: '\f0ae'; } /* Завдання */
+        h2:nth-child(4)::before { content: '\f0e8'; } /* Структура */
+        h2:nth-child(5)::before { content: '\f24e'; } /* Закон */
+        h2:nth-child(6)::before { content: '\f0ac'; } /* Глобус */
+        h2:nth-child(7)::before { content: '\f0ad'; } /* Інструменти */
+        h2:nth-child(8)::before { content: '\f0fb'; } /* Літак */
+        h2:nth-child(9)::before { content: '\f234'; } /* Новий користувач */
+        h2:nth-child(10)::before { content: '\f005'; } /* Зірка */
+        h2:nth-child(11)::before { content: '\f0b1'; } /* Портфель */
 
         h3 {
             font-size: 1.5em;
             color: #00b0ff;
             margin-bottom: 15px;
+            position: relative;
+        }
+
+        h3::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: #00b0ff;
         }
 
         p, ul {
@@ -126,12 +185,19 @@
         }
 
         ul {
-            list-style-type: square;
-            margin-left: 30px;
+            list-style-type: none;
+            margin-left: 0;
         }
 
         li {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        li i {
+            margin-right: 10px;
+            color: #00b0ff;
         }
 
         strong {
@@ -139,7 +205,7 @@
         }
 
         .subdivision-card {
-            background: rgba(44, 62, 80, 0.9);
+            background: rgba(44, 62, 80, 0.74);
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
@@ -163,7 +229,6 @@
             margin-bottom: 10px;
         }
 
-        /* Анімації */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -174,10 +239,25 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Адаптивний дизайн */
+        /* Адаптивність */
+        @media (max-width: 1024px) {
+            h1.site-title {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                padding: 10px 20px;
+                margin: 0 10px;
+            }
+
+            main {
+                padding: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
-                padding: 40px 0;
+                padding: 40px 20px;
             }
 
             h1.site-title {
@@ -191,14 +271,12 @@
 
             nav a {
                 margin: 8px 0;
+                padding: 10px 15px;
             }
 
             main {
                 padding: 20px;
-            }
-
-            section {
-                padding: 15px;
+                margin: 20px;
             }
 
             h2 {
@@ -208,93 +286,203 @@
             p, ul {
                 font-size: 1em;
             }
+
+            .subdivision-card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1.site-title {
+                font-size: 1.5em;
+            }
+
+            .logo {
+                max-width: 80px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            p, ul {
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .subdivision-card {
+                padding: 10px;
+            }
+
+            .subdivision-card h3 {
+                font-size: 1.2em;
+            }
+
+            .subdivision-card p {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
-            <h1 class="site-title">Про Службу безпеки України</h1>
-            <nav>
-                <a href="index.html"><i class="fas fa-home"></i> Головна</a>
-                <a href="Керівництво.html"><i class="fas fa-users"></i> Керівництво</a>
-                <a href="Інформація.html"><i class="fas fa-newspaper"></i> Інформація</a>
-                <a href="Розшук.html"><i class="fas fa-search"></i> Розшук</a>
-                <a href="Активні працівники.html"><i class="fas fa-trophy"></i> Топ-10 працівників</a>
-            </nav>
-        </div>
-    </header>
+    <div class="overlay">
+        <header>
+            <div class="header-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
+                <h1 class="site-title">Про Службу безпеки України</h1>
+                <nav>
+                    <a href="index.html">Головна</a>
+                    <a href="Керівництво.html">Керівництво</a>
+                    <a href="Інформація.html">Інформація</a>
+                    <a href="Розшук.html">Розшук</a>
+                    <a href="Активні працівники.html">Топ-10 працівників</a>
+                </nav>
+            </div>
+        </header>
 
-    <main>
-        <section>
-            <h2><i class="fas fa-info-circle"></i> Загальна інформація про СБУ</h2>
-            <p>Служба безпеки України (СБУ) — це державний орган, який здійснює заходи щодо забезпечення національної безпеки та боротьби з тероризмом, екстремізмом, корупцією та іншими загрозами для державного устрою України. Вона також відповідає за охорону державних таємниць, боротьбу з організованою злочинністю, контррозвідку та кібербезпеку.</p>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-history"></i> Історія створення СБУ</h2>
-            <p>Служба безпеки України була створена 20 березня 1992 року як правонаступник КДБ УРСР. За час свого існування СБУ неодноразово змінювала структуру та напрямки роботи, пристосовуючись до нових викликів часу, таких як боротьба з тероризмом та кіберзлочинністю.</p>
-            <p>Основною метою СБУ є забезпечення безпеки та захисту інтересів держави і громадян України, а також протидія незаконним діям, які загрожують національній безпеці.</p>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-tasks"></i> Основні досягнення та операції СБУ</h2>
-            <ul>
-                <li><strong>Операція «Захист кордонів»</strong>: СБУ активно проводить операції для захисту національних кордонів та боротьби з контрабандою і незаконними перетинами кордону.</li>
-                <li><strong>Знищення терористичних угруповань</strong>: Успішні операції з нейтралізації терористичних груп на території України та за її межами.</li>
-                <li><strong>Операція «Кіберстраж»</strong>: Протидія кіберзлочинності, розробка заходів для захисту критичної інфраструктури від кібератак.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-sitemap"></i> Структура СБУ</h2>
-            <p>СБУ складається з кількох основних підрозділів, кожен з яких відповідає за конкретні аспекти безпеки:</p>
-            <div class="subdivision-card">
-                <h3>Центр спеціальних операцій «Альфа»</h3>
-                <p>Елітний підрозділ для виконання найскладніших завдань, зокрема, захоплення заручників і боротьби з тероризмом.</p>
-            </div>
-            <div class="subdivision-card">
-                <h3>Контррозвідка</h3>
-                <p>Відповідає за виявлення і ліквідацію іноземних агентів та контррозвідувальну діяльність на території України.</p>
-            </div>
-            <div class="subdivision-card">
-                <h3>Державне Бюро Розслідувань</h3>
-                <p>Здійснює правоохоронну діяльність з метою попередження, виявлення, припинення та розслідування злочинів, віднесених до його компетенції..</p>
-            </div>
-            <div class="subdivision-card">
-                <h3>Національна Академія</h3>
-                <p>Головний освітній і науковий центр, який готує висококваліфікованих фахівців для Служби безпеки України. Вона є закритим вищим навчальним закладом, що здійснює підготовку спеціалістів у сфері національної безпеки, контррозвідки, антикорупційної діяльності та спеціальних операцій.</p>
-            </div>
-            <div class="subdivision-card">
-                <h3>Спеціальний підрозділ "ТИТАН"</h3>
-                <p>Патрулює вулиці міст, забезпечує громадський порядок та безпеку, першим реагує на інформацію про надзвичайні події, надає первинну медичну та невідкладну допомогу громадянам, виявляє правопорушників та осіб, які перебувають у розшуку за вчинені кримінальні правопорушення.</p>
-            </div>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-user-shield"></i> Права та обов'язки співробітників СБУ</h2>
-            <p>Співробітники СБУ мають право здійснювати розслідування та операції для забезпечення національної безпеки, а також виконувати адміністративні, оперативно-розшукові та інші заходи в межах своїх повноважень.</p>
-            <p>Обов'язки співробітників СБУ включають:</p>
-            <ul>
-                <li>Забезпечення безпеки державних кордонів і боротьба з тероризмом.</li>
-                <li>Збір, обробка та аналіз інформації, що стосується національної безпеки.</li>
-                <li>Нейтралізація загроз, що виникають внаслідок злочинної діяльності.</li>
-                <li>Співпраця з іншими правоохоронними та розвідувальними органами.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-tools"></i> Технічне оснащення та інновації СБУ</h2>
-            <p>СБУ активно впроваджує сучасні технології для забезпечення безпеки країни. Це включає використання новітніх систем моніторингу, аналітичних інструментів, системи кібербезпеки та дронів для проведення спецоперацій.</p>
-            <p>Також ведеться активна робота по розвитку штучного інтелекту для відслідковування кіберзагроз та антишахрайських заходів в цифровому середовищі.</p>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-globe"></i> Співпраця з міжнародними організаціями</h2>
-            <p>СБУ активно співпрацює з міжнародними організаціями, такими як Інтерпол, Європейський Союз, а також з правоохоронними органами інших держав для боротьби з транснаціональними загрозами, зокрема в сфері тероризму та кіберзлочинності.</p>
-            <p>Міжнародна співпраця дозволяє СБУ отримувати важливу розвідку та підтримку у боротьбі з глобальними загрозами.</p>
-        </section>
-    </main>
+        <main>
+            <section>
+                <h2>Служба безпеки України (СБУ): Детальний огляд</h2>
+                <p>Служба безпеки України (СБУ) — це ключовий державний орган, який забезпечує національну безпеку України, захищає її суверенітет, територіальну цілісність та інтереси громадян.</p>
+                <ul>
+                    <li><i class="fas fa-user-tie"></i> <strong>Підпорядкованість:</strong> Президенту України.</li>
+                    <li><i class="fas fa-bullseye"></i> <strong>Головне завдання:</strong> Захист національної безпеки та інтересів держави.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Історичний контекст та еволюція</h2>
+                <p>СБУ була створена 20 березня 1992 року як правонаступник КДБ УРСР. Становлення служби відбувалося в складних умовах розбудови незалежної держави, очищення від радянського впливу та пошуку власної ідентичності.</p>
+                <p>З часом СБУ адаптувалася до нових викликів: боротьба з організованою злочинністю 90-х, економічними злочинами, міжнародним тероризмом, а з 2014 року — протидія російській агресії.</p>
+                <p>Повномасштабне вторгнення Росії у 2022 році стало найвищим випробуванням, де СБУ продемонструвала професіоналізм у захисті країни.</p>
+            </section>
+
+            <section>
+                <h2>Функціональні обов’язки та сфери діяльності</h2>
+                <ul>
+                    <li><i class="fas fa-user-secret"></i> <strong>Контррозвідувальна діяльність:</strong> Виявлення та припинення діяльності іноземних спецслужб.</li>
+                    <li><i class="fas fa-bomb"></i> <strong>Боротьба з тероризмом:</strong> Нейтралізація терористичних загроз і звільнення заручників.</li>
+                    <li><i class="fas fa-lock"></i> <strong>Захист державної таємниці:</strong> Контроль секретної інформації.</li>
+                    <li><i class="fas fa-shield-alt"></i> <strong>Кібербезпека:</strong> Захист критичної інфраструктури від кібератак.</li>
+                    <li><i class="fas fa-gavel"></i> <strong>Боротьба з корупцією та організованою злочинністю:</strong> Припинення корупційних схем.</li>
+                    <li><i class="fas fa-flag"></i> <strong>Захист конституційного ладу:</strong> Забезпечення суверенітету України.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Структурні підрозділи та їх специфіка</h2>
+                <div class="subdivision-card">
+                    <h3><i class="fas fa-users-cog"></i> Центр спеціальних операцій "Альфа"</h3>
+                    <p>Елітний спецпідрозділ для антитерористичних операцій і затримання небезпечних злочинців.</p>
+                </div>
+                <div class="subdivision-card">
+                    <h3><i class="fas fa-user-secret"></i> Контррозвідка</h3>
+                    <p>Припиняє розвідувально-підривну діяльність іноземних спецслужб.</p>
+                </div>
+                <div class="subdivision-card">
+                    <h3><i class="fas fa-gavel"></i> Державне бюро розслідувань (ДБР)</h3>
+                    <p>Співпрацює з СБУ у розслідуванні злочинів високопосадовців.</p>
+                </div>
+                <div class="subdivision-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Національна академія СБУ</h3>
+                    <p>Готує фахівців для оперативної, аналітичної та кібердіяльності.</p>
+                </div>
+                <div class="subdivision-card">
+                    <h3><i class="fas fa-shield-alt"></i> Спеціальний підрозділ "Титан"</h3>
+                    <p>Забезпечує фізичний захист та участь у спецопераціях.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Правові аспекти діяльності</h2>
+                <p>Діяльність СБУ регулюється Законом України "Про Службу безпеки України". Співробітники мають повноваження для оперативно-розшукових заходів під контролем державних органів.</p>
+            </section>
+
+            <section>
+                <h2>Міжнародна співпраця</h2>
+                <p>СБУ співпрацює з Інтерполом, ЄС та іншими партнерами у боротьбі з транснаціональною злочинністю та тероризмом.</p>
+            </section>
+
+            <section>
+                <h2>Технічне оснащення та інновації</h2>
+                <p>СБУ використовує системи моніторингу, кібербезпеки, дрони та штучний інтелект для підвищення ефективності.</p>
+            </section>
+
+            <section>
+                <h2>СБУ в умовах війни</h2>
+                <p>З 2014 року СБУ протидіє російській агресії, а з 2022 року активно бореться з диверсантами, кібератаками та збирає розвіддані.</p>
+            </section>
+
+            <section>
+                <h2>Критерії до вступу в СБУ</h2>
+                <ul>
+                    <li><i class="fas fa-home"></i> Проживання в області не менше 4 років.</li>
+                    <li><i class="fas fa-gavel"></i> Чистота перед законом – відсутність активних судимостей.</li>
+                    <li><i class="fas fa-ban"></i> Відсутність залежностей – алкогольної та наркотичної.</li>
+                    <li><i class="fas fa-book"></i> Базові знання про СБУ та закони України.</li>
+                    <li><i class="fas fa-thumbs-up"></i> Позитивний соціальний рейтинг – репутація та активність.</li>
+                    <li><i class="fas fa-comments"></i> Комунікабельність і гарний настрій – стресостійкість.</li>
+                    <li><i class="fas fa-dumbbell"></i> Фізична підготовка – хороша спортивна форма.</li>
+                    <li><i class="fas fa-brain"></i> Психологічна стійкість – дії в складних ситуаціях.</li>
+                    <li><i class="fas fa-lock"></i> Готовність до секретності – дотримання конфіденційності.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Службові звання в СБУ</h2>
+                <h3><i class="fas fa-user"></i> Рядовий склад:</h3>
+                <ul>
+                    <li><i class="fas fa-angle-right"></i> [1] Курсант</li>
+                    <li><i class="fas fa-angle-right"></i> [2] Капрал</li>
+                </ul>
+                <h3><i class="fas fa-users"></i> Сержантський склад:</h3>
+                <ul>
+                    <li><i class="fas fa-angle-right"></i> [3] Сержант</li>
+                    <li><i class="fas fa-angle-right"></i> [4] Старший сержант</li>
+                </ul>
+                <h3><i class="fas fa-user-tie"></i> Офіцерський склад:</h3>
+                <ul>
+                    <li><i class="fas fa-angle-right"></i> [5] Молодший лейтенант</li>
+                    <li><i class="fas fa-angle-right"></i> [6] Лейтенант</li>
+                    <li><i class="fas fa-angle-right"></i> [7] Старший лейтенант</li>
+                    <li><i class="fas fa-angle-right"></i> [8] Капітан</li>
+                    <li><i class="fas fa-angle-right"></i> [9] Майор</li>
+                    <li><i class="fas fa-angle-right"></i> [10] Підполковник</li>
+                    <li><i class="fas fa-angle-right"></i> [11] Полковник</li>
+                    <li><i class="fas fa-angle-right"></i> [12] Генерал</li>
+                </ul>
+                <p><i class="fas fa-lightbulb"></i> Кар’єрне зростання в СБУ залежить від професійних якостей, відданості та результатів роботи.</p>
+            </section>
+
+            <section>
+                <h2>Що очікує нового співробітника?</h2>
+                <ul>
+                    <li><i class="fas fa-graduation-cap"></i> Професійний розвиток – тренінги та кар’єрне зростання.</li>
+                    <li><i class="fas fa-money-bill-wave"></i> Стабільність – зарплата та соціальні гарантії.</li>
+                    <li><i class="fas fa-user-secret"></i> Секретні операції – боротьба з тероризмом і кіберзлочинністю.</li>
+                    <li><i class="fas fa-users"></i> Сильний колектив – робота в команді професіоналів.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Високий рівень відповідальності – завдання для безпеки країни.</li>
+                </ul>
+                <p><strong><i class="fas fa-handshake"></i> Ласкаво просимо до Служби безпеки України! Ти – майбутнє нашої держави!</strong></p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://gordonua.com/img/article/16699/66_main-v1687510618.jpg') no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://kor.ill.in.ua/m/610x385/2877069.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #e0e0e0;
             margin: 0;
@@ -19,7 +19,7 @@
 
         header {
             background: #0000009d;
-            padding: 60px 0;
+            padding: 40px 0;
             position: relative;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
@@ -50,28 +50,32 @@
             color: #00b0ff;
             margin-bottom: 25px;
             text-shadow: 2px 2px 8px rgba(0, 176, 255, 0.5);
+            text-align: center;
         }
 
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(38, 38, 38, 0.2);
+            background: rgba(38, 38, 38, 0.3);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             border-radius: 10px;
             margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
             color: #e0e0e0;
             padding: 12px 25px;
-            margin: 0 15px;
+            margin: 5px 15px;
             border-radius: 8px;
             transition: all 0.3s ease;
             font-weight: 500;
+            display: flex;
+            align-items: center;
         }
 
         nav a:hover {
@@ -105,67 +109,6 @@
             text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
         }
 
-        .top-list {
-            width: 90%;
-            max-width: 1000px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .top-list li {
-            background: rgba(15, 22, 40, 0.95);
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .top-list li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 176, 255, 0.4);
-        }
-
-        .rank {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #00b0ff;
-            margin-right: 20px;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .person-info {
-            flex-grow: 1;
-        }
-
-        .person-info h3 {
-            margin: 0;
-            font-size: 1.4em;
-            color: #e0e0e0;
-        }
-
-        .person-info p {
-            margin: 5px 0 0;
-            color: #a0a0a0;
-            font-size: 1.1em;
-        }
-
-        .rating {
-            font-size: 1.4em;
-            color: #00b0ff;
-            font-weight: bold;
-            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
-        }
-
-        .icon {
-            margin-right: 10px;
-            color: #00b0ff;
-        }
-
         .podium-container {
             display: flex;
             justify-content: center;
@@ -186,6 +129,7 @@
             width: 30%;
             transition: transform 0.3s ease;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
         .podium-item:hover {
@@ -195,33 +139,195 @@
         .podium-item.first {
             height: 300px;
             border: 2px solid gold;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(15, 22, 40, 0.95));
         }
 
         .podium-item.second {
             height: 250px;
             border: 2px solid silver;
+            background: linear-gradient(45deg, rgba(192, 192, 192, 0.2), rgba(15, 22, 40, 0.95));
         }
 
         .podium-item.third {
             height: 200px;
             border: 2px solid #cd7f32;
+            background: linear-gradient(45deg, rgba(205, 127, 50, 0.2), rgba(15, 22, 40, 0.95));
         }
 
-        .place-icon {
-            font-size: 3em;
+        .crown-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            animation: crownGlow 2s infinite ease-in-out;
+        }
+
+        .crown-icon.first::before {
+            content: "\f521"; /* FontAwesome crown icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: gold;
+            font-size: 2.5em;
+        }
+
+        .crown-icon.second::before {
+            content: "\f521";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: silver;
+            font-size: 2em;
+        }
+
+        .crown-icon.third::before {
+            content: "\f521";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #cd7f32;
+            font-size: 1.5em;
+        }
+
+        .trophy-icon {
+            font-size: 2em;
             margin-bottom: 15px;
         }
 
-        .gold {
+        .trophy-icon.first::before {
+            content: "\f091";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             color: gold;
         }
 
-        .silver {
+        .trophy-icon.second::before {
+            content: "\f091";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             color: silver;
         }
 
-        .bronze {
+        .trophy-icon.third::before {
+            content: "\f091";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             color: #cd7f32;
+        }
+
+        .person-info {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .person-info h3 {
+            margin: 0;
+            font-size: 1.4em;
+            color: #e0e0e0;
+        }
+
+        .person-info p {
+            margin: 5px 0 0;
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+
+        .top-list {
+            width: 90%;
+            max-width: 1000px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .top-list li {
+            background: linear-gradient(90deg, rgba(15, 22, 40, 0.95), rgba(0, 176, 255, 0.1));
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-list li:hover,
+        .top-list li:active {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 176, 255, 0.4);
+            background: linear-gradient(90deg, rgba(15, 22, 40, 0.95), rgba(0, 176, 255, 0.2));
+        }
+
+        .top-list li::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #00b0ff;
+            transition: width 0.3s ease;
+        }
+
+        .top-list li:hover::before,
+        .top-list li:active::before {
+            width: 10px;
+        }
+
+        .rank {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00b0ff;
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .rank::after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 0.8em;
+            color: #00b0ff;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .person-info {
+            flex-grow: 1;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            transition: width 0.5s ease;
+        }
+
+        .rating {
+            font-size: 1.4em;
+            color: #00b0ff;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #00b0ff;
+        }
+
+        /* Анімація для корони */
+        @keyframes crownGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
         }
 
         /* Анімації */
@@ -235,13 +341,18 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Адаптивність для планшетів (768px) */
         @media (max-width: 768px) {
             header {
-                padding: 40px 0;
+                padding: 30px 0;
             }
 
             h1.site-title {
                 font-size: 2em;
+            }
+
+            .logo {
+                max-width: 100px;
             }
 
             nav {
@@ -251,15 +362,18 @@
 
             nav a {
                 margin: 8px 0;
+                padding: 10px 20px;
+                width: 80%;
+                justify-content: center;
             }
 
-            .top-list li {
-                flex-direction: column;
-                align-items: flex-start;
+            main {
+                padding: 20px;
+                margin: 20px 10px;
             }
 
-            .rank {
-                margin-bottom: 10px;
+            .section-title {
+                font-size: 1.8em;
             }
 
             .podium-container {
@@ -274,8 +388,129 @@
                 padding: 15px;
             }
 
+            .crown-icon.first::before {
+                font-size: 2em;
+            }
+
+            .crown-icon.second::before {
+                font-size: 1.5em;
+            }
+
+            .crown-icon.third::before {
+                font-size: 1.2em;
+            }
+
+            .trophy-icon {
+                font-size: 1.5em;
+            }
+
+            .top-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .rank {
+                margin-bottom: 10px;
+            }
+
+            .rating {
+                margin-top: 10px;
+            }
+
+            .progress-bar {
+                width: 100%;
+            }
+        }
+
+        /* Адаптивність для телефонів (480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 0;
+            }
+
+            h1.site-title {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+                padding: 0 10px;
+            }
+
+            .logo {
+                max-width: 80px;
+            }
+
+            nav {
+                padding: 5px 0;
+                margin-bottom: 10px;
+            }
+
+            nav a {
+                margin: 5px 0;
+                padding: 8px 15px;
+                font-size: 0.9em;
+                width: 90%;
+            }
+
+            nav a i {
+                margin-right: 8px;
+            }
+
+            main {
+                padding: 15px;
+                margin: 15px 5px;
+                border-radius: 10px;
+            }
+
             .section-title {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .podium-item {
+                width: 90%;
+                padding: 10px;
+            }
+
+            .crown-icon.first::before {
                 font-size: 1.8em;
+            }
+
+            .crown-icon.second::before {
+                font-size: 1.3em;
+            }
+
+            .crown-icon.third::before {
+                font-size: 1em;
+            }
+
+            .trophy-icon {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            .top-list li {
+                padding: 10px;
+            }
+
+            .rank {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+            }
+
+            .person-info h3 {
+                font-size: 1.2em;
+            }
+
+            .person-info p {
+                font-size: 0.9em;
+            }
+
+            .rating {
+                font-size: 1.2em;
+            }
+
+            .progress-bar {
+                height: 6px;
             }
         }
     </style>
@@ -302,25 +537,28 @@
 
         <div class="podium-container">
             <div class="podium-item second">
-                <span class="place-icon silver">🥈</span>
+                <span class="crown-icon second"></span>
+                <span class="trophy-icon second"></span>
                 <div class="person-info">
-                    <h3><i class="fas fa-user-shield icon"></i> - </h3>
+                    <h3>-</h3>
                     <p>Керівник "-"</p>
                 </div>
                 <span class="rating">0/10</span>
             </div>
             <div class="podium-item first">
-                <span class="place-icon gold">🥇</span>
+                <span class="crown-icon first"></span>
+                <span class="trophy-icon first"></span>
                 <div class="person-info">
-                    <h3><i class="fas fa-user-shield icon"></i> -</h3>
+                    <h3>-</h3>
                     <p>Керівник "-"</p>
                 </div>
                 <span class="rating">0/10</span>
             </div>
             <div class="podium-item third">
-                <span class="place-icon bronze">🥉</span>
+                <span class="crown-icon third"></span>
+                <span class="trophy-icon third"></span>
                 <div class="person-info">
-                    <h3><i class="fas fa-user-secret icon"></i> -</h3>
+                    <h3>-</h3>
                     <p>Керівник "-"</p>
                 </div>
                 <span class="rating">0/10</span>
@@ -334,7 +572,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">8.5/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 8.5/10</span>
             </li>
             <li>
                 <span class="rank">5</span>
@@ -342,7 +580,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">8.2/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 8.2/10</span>
             </li>
             <li>
                 <span class="rank">6</span>
@@ -350,7 +588,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">8/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 8/10</span>
             </li>
             <li>
                 <span class="rank">7</span>
@@ -358,7 +596,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">7.9/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 7.9/10</span>
             </li>
             <li>
                 <span class="rank">8</span>
@@ -366,7 +604,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">7.5/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 7.5/10</span>
             </li>
             <li>
                 <span class="rank">9</span>
@@ -374,7 +612,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">7.2/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 7.2/10</span>
             </li>
             <li>
                 <span class="rank">10</span>
@@ -382,7 +620,7 @@
                     <h3>=</h3>
                     <p>=</p>
                 </div>
-                <span class="rating">7/10</span>
+                <span class="rating"><i class="fas fa-star icon"></i> 7/10</span>
             </li>
         </ul>
     </section>
