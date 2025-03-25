@@ -85,9 +85,6 @@
         }
 
         main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             padding: 40px;
             background: rgba(26, 26, 26, 0.9);
             border-radius: 15px;
@@ -97,14 +94,22 @@
             animation: fadeInUp 1s ease-out;
         }
 
+        .counters-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
         .counter-container {
             width: 100%;
+            max-width: 300px;
             padding: 30px;
             background: rgba(15, 22, 40, 0.95);
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
             text-align: center;
-            margin-bottom: 30px;
             transition: transform 0.3s ease;
         }
 
@@ -222,7 +227,6 @@
             margin-left: 10px;
         }
 
-        /* Анімації */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -233,7 +237,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Адаптивний дизайн */
         @media (max-width: 768px) {
             header {
                 padding: 40px 0;
@@ -250,6 +253,15 @@
 
             nav a {
                 margin: 8px 0;
+            }
+
+            .counters-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .counter-container {
+                margin: 15px 0;
             }
 
             .counter-container h3,
@@ -270,60 +282,45 @@
             .contest p {
                 font-size: 1em;
             }
-
-            .counter-container > div {
-                flex-direction: column;
-            }
-
-            .counter-container > div > div {
-                margin: 15px 0;
-            }
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Лічильник для спецоперацій
             let opsCount = 0;
             const opsTarget = 58;
             const opsCounter = document.getElementById('successful-operations');
             const opsIncrement = opsTarget / 100;
 
-            // Лічильник для затримань
             let arrestCount = 0;
             const arrestTarget = 360;
             const arrestCounter = document.getElementById('arrests');
             const arrestIncrement = arrestTarget / 100;
 
-            // Лічильник для зброї
-            let weaponCount = 0;
-            const weaponTarget = 4000;
-            const weaponCounter = document.getElementById('weapons');
-            const weaponIncrement = weaponTarget / 100;
+            let employeeCount = 0;
+            const employeeTarget = 30;
+            const employeeCounter = document.getElementById('top-employees');
+            const employeeIncrement = employeeTarget / 100;
 
             const interval = setInterval(function() {
-                // Спецоперації
                 if (opsCount < opsTarget) {
                     opsCount += opsIncrement;
                     opsCounter.textContent = Math.floor(opsCount);
                 }
 
-                // Затримання
                 if (arrestCount < arrestTarget) {
                     arrestCount += arrestIncrement;
                     arrestCounter.textContent = Math.floor(arrestCount) + '+';
                 }
 
-                // Зброя
-                if (weaponCount < weaponTarget) {
-                    weaponCount += weaponIncrement;
-                    weaponCounter.textContent = Math.floor(weaponCount) + '+';
+                if (employeeCount < employeeTarget) {
+                    employeeCount += employeeIncrement;
+                    employeeCounter.textContent = Math.floor(employeeCount);
                 }
 
-                // Зупинка інтервалу коли всі лічильники досягнуть цілей
-                if (opsCount >= opsTarget && arrestCount >= arrestTarget && weaponCount >= weaponTarget) {
+                if (opsCount >= opsTarget && arrestCount >= arrestTarget && employeeCount >= employeeTarget) {
                     opsCounter.textContent = opsTarget;
                     arrestCounter.textContent = arrestTarget + '+';
-                    weaponCounter.textContent = weaponTarget + '+';
+                    employeeCounter.textContent = employeeTarget;
                     clearInterval(interval);
                 }
             }, 50);
@@ -346,23 +343,23 @@
     </header>
 
     <main>
-        <div class="counter-container">
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                <div style="flex: 1; margin: 0 15px;">
-                    <h3><i class="fas fa-check-circle"></i> Спецоперації</h3>
-                    <div class="counter" id="successful-operations">0</div>
-                    <h4>Проведено</h4>
-                </div>
-                <div style="flex: 1; margin: 0 15px;">
-                    <h3><i class="fas fa-handcuffs"></i> Затримання</h3>
-                    <div class="counter" id="arrests">0</div>
-                    <h4>Здійснено</h4>
-                </div>
-                <div style="flex: 1; margin: 0 15px;">
-                    <h3><i class="fas fa-gun"></i> Зброя</h3>
-                    <div class="counter" id="weapons">0</div>
-                    <h4>Вилучено</h4>
-                </div>
+        <div class="counters-wrapper">
+            <div class="counter-container">
+                <h3><i class="fas fa-check-circle"></i> Спецоперації</h3>
+                <div class="counter" id="successful-operations">0</div>
+                <h4>Проведено</h4>
+            </div>
+        
+            <div class="counter-container">
+                <h3><i class="fas fa-gavel"></i> Затримання</h3>
+                <div class="counter" id="arrests">0</div>
+                <h4>Здійснено</h4>
+            </div>
+        
+            <div class="counter-container">
+                <h3><i class="fas fa-users"></i> Працівники</h3>
+                <div class="counter" id="top-employees">0</div>
+                <h4>Найкращі з найкращих</h4>
             </div>
         </div>
 
