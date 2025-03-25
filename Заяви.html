@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розшук - СБУ м. Дніпро</title>
+    <title>Подати заяву - СБУ м. Дніпро</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -97,57 +97,77 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .wanted-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .form-container {
             width: 100%;
+            max-width: 800px;
             padding: 30px;
             background: rgba(15, 22, 40, 0.95);
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
         }
 
-        .wanted-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .wanted-photo {
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-            margin-right: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .wanted-photo:hover {
-            transform: scale(1.05);
-        }
-
-        .wanted-info {
-            color: #e0e0e0;
-            font-size: 1.2em;
-            width: 60%;
-        }
-
-        .wanted-info h2 {
+        .form-container h2 {
             color: #00b0ff;
-            margin-bottom: 15px;
-            font-size: 2.5em;
-            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 2em;
             text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
         }
 
-        .wanted-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .wanted-info p i {
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        #statement {
+            min-height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: #e0e0e0;
+            outline: none;
+        }
+
+        .custom-file-upload {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+        }
+
+        .custom-file-upload:hover {
+            background: linear-gradient(45deg, #0096db, #007bb5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 176, 255, 0.6);
+        }
+
+        .custom-file-upload i {
             margin-right: 10px;
-            color: #00b0ff;
+        }
+
+        .custom-file-upload input[type="file"] {
+            display: none;
         }
 
         .btn {
@@ -175,15 +195,180 @@
             margin-left: 10px;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #002244;
+        .articles-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #00b0ff, #0096db);
             color: #fff;
-            margin-top: 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 176, 255, 0.4);
+            border: none;
         }
 
-        /* Анімації */
+        .articles-btn:hover {
+            background: linear-gradient(45deg, #0096db, #007bb5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 176, 255, 0.6);
+        }
+
+        .articles-btn i {
+            margin-right: 10px;
+        }
+
+        .selected-articles {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 176, 255, 0.1);
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+
+        .selected-articles:empty::before {
+            content: "Не вибрано жодної статті";
+            color: #999;
+        }
+
+        .articles-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .articles-popup-content {
+            background: rgba(15, 22, 40, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .articles-popup-content h3 {
+            color: #00b0ff;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 5px rgba(0, 176, 255, 0.5);
+        }
+
+        .articles-list label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(0, 176, 255, 0.1);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .articles-list label:hover {
+            background: rgba(0, 176, 255, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 176, 255, 0.3);
+        }
+
+        .articles-list input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #00b0ff;
+        }
+
+        .articles-list span {
+            font-size: 1em;
+            color: #e0e0e0;
+        }
+
+        .articles-list .time {
+            margin-left: auto;
+            color: #ff4444;
+            font-weight: 600;
+        }
+
+        .save-articles-btn {
+            background: linear-gradient(45deg, #00b0ff, #0096db);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .save-articles-btn:hover {
+            background: linear-gradient(45deg, #0096db, #007bb5);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                         url('https://ukraine-gta.com.ua/images/pages/main/gallery/@2x/7.webp') no-repeat center center;
+            background-size: cover;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .popup-content h2 {
+            font-size: 3em;
+            color: #ff4444;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(255, 68, 68, 0.5);
+        }
+
+        .popup-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background: #ff4444;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #cc3333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -194,53 +379,26 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Адаптивний дизайн */
         @media (max-width: 768px) {
-            header {
-                padding: 40px 0;
+            .form-container {
+                padding: 20px;
             }
 
-            h1.site-title {
-                font-size: 2em;
+            .popup-content, .articles-popup-content {
+                padding: 20px;
             }
 
-            nav {
-                flex-direction: column;
-                padding: 10px 0;
-            }
-
-            nav a {
-                margin: 8px 0;
-            }
-
-            .wanted-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .wanted-photo {
-                margin: 20px 0;
-            }
-
-            .wanted-info {
-                width: 100%;
-                text-align: center;
-            }
-
-            .wanted-info h2 {
-                font-size: 1.8em;
+            .popup-content h2, .articles-popup-content h3 {
+                font-size: 1.5em;
             }
         }
-
-        
-
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Security_Service_of_Ukraine_Emblem.svg" alt="Logo" class="logo">
-            <h1 class="site-title">Розшук - СБУ м. Дніпро</h1>
+            <h1 class="site-title">Подати заяву - СБУ м. Дніпро</h1>
             <nav>
                 <a href="index.html"><i class="fas fa-home"></i> Головна</a>
                 <a href="Про СБУ.html"><i class="fas fa-info-circle"></i> Про СБУ</a>
@@ -252,19 +410,145 @@
     </header>
 
     <main>
-        <div class="wanted-container">
-            <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/99b81f39-9a4d-48f0-b3e4-37c47d876293.webp" alt="Фото розшукуваної особи" class="wanted-photo">
-            <div class="wanted-info">
-                <h2><i class="fas fa-exclamation-circle"></i> Розшукується</h2>
-                <p><i class="fas fa-user"></i> <strong>Ім'я та Прізвище:</strong> Одін Бьор</p>
-                <p><i class="fas fa-id-card"></i> <strong>Номер паспорту:</strong> 6864080</p>
-                <p><i class="fas fa-gavel"></i> <strong>Стаття:</strong> 5.14, 1.3</p>
-                <button class="btn" onclick="window.location.href='https://ukraine-gta.com.ua/images/game/skins/300x280/35.webp'">
-                    Переглянути докази <i class="fas fa-eye"></i>
-                </button>
-            </div>
+        <div class="form-container">
+            <h2><i class="fas fa-file-alt"></i> Форма подачі заяви</h2>
+            <form id="submissionForm">
+                <div class="form-group">
+                    <label for="applicantName">1. Ваше ім'я та прізвище:</label>
+                    <input type="text" id="applicantName" name="applicantName">
+                </div>
+                <div class="form-group">
+                    <label for="targetName">2. На кого подаєте (Ім'я та Прізвище/ID):</label>
+                    <input type="text" id="targetName" name="targetName">
+                </div>
+                <div class="form-group">
+                    <label>3. Виберіть статтю:</label>
+                    <button type="button" class="articles-btn" onclick="openArticlesPopup()">
+                        <i class="fas fa-list"></i> Обрати статті
+                    </button>
+                    <div class="selected-articles" id="selectedArticles"></div>
+                </div>
+                <div class="form-group">
+                    <label>3.1. До заяви додаю(необов’язково):</label>
+                    <div contenteditable="true" id="statement" name="statement"></div>
+                </div>
+                <div class="form-group">
+                    <label for="evidenceLink">4. Докази (посилання):</label>
+                    <input type="url" id="evidenceLink" name="evidenceLink" placeholder="https://yootube.com">
+                </div>
+                <div class="form-group">
+                    <label>5. Або вставити файл:</label>
+                    <label class="custom-file-upload">
+                        <i class="fas fa-upload"></i> Вибрати файл
+                        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx">
+                    </label>
+                    <span id="fileName" style="margin-left: 10px;"></span>
+                </div>
+                <button type="submit" class="btn">Надіслати <i class="fas fa-paper-plane"></i></button>
+            </form>
         </div>
     </main>
 
+    <div class="articles-popup" id="articlesPopup">
+        <div class="articles-popup-content">
+            <h3><i class="fas fa-list"></i> Виберіть статті</h3>
+            <div class="articles-list" id="articlesList">
+                <label><input type="checkbox" name="article" value="1.1"> <span>Стаття 1.1 Вбивство</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="1.3"> <span>Стаття 1.3 Умисне заподіяння тяжкої шкоди здоров'ю</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="1.6"> <span>Стаття 1.6 Перешкоджання наданню медичної допомоги</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="4.2"> <span>Стаття 4.2 Грабіж</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="4.3"> <span>Стаття 4.3 Напад на інкасацію</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="4.6"> <span>Стаття 4.6 Умисне знищення або пошкодження майна</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="4.7"> <span>Стаття 4.7 Крадіжка авто</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.1"> <span>Стаття 5.1 Терористичний акт</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.2"> <span>Стаття 5.2 Сприяння терористичній діяльності</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.4"> <span>Стаття 5.4 Захоплення заручника</span> <span class="time">(25 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.6"> <span>Стаття 5.6 Бандитизм</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.7"> <span>Стаття 5.7 Організація злочинної спільноти або участь у ній</span> <span class="time">(25 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.9"> <span>Стаття 5.9 Масові заворушення</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.10"> <span>Стаття 5.10 Хуліганство</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.11"> <span>Стаття 5.11 Вандалізм</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.12"> <span>Стаття 5.12 Незаконне проникнення на об'єкт, що охороняється</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.13"> <span>Стаття 5.13 Незаконне придбання/передача/виготовлення зброї</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.14"> <span>Стаття 5.14 Незаконне використання/носіння зброї</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.15"> <span>Стаття 5.15 Збройне насильство під час мітингу</span> <span class="time">(50 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="5.16"> <span>Стаття 5.16 Порушення правил порядку</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="6.3"> <span>Стаття 6.3 Створення ДТП</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="7.1"> <span>Стаття 7.1 Незаконний продаж/купівля/зберігання наркотиків</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="7.2"> <span>Стаття 7.2 Незаконне вживання наркотичних засобів</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="8.1"> <span>Стаття 8.1 Посягання на життя державного діяча</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="8.2"> <span>Стаття 8.2 Збройний заколот</span> <span class="time">(50 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="8.3"> <span>Стаття 8.3 Публічні заклики до здійснення екстремістської діяльності</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="8.7"> <span>Стаття 8.7 Одержання хабаря</span> <span class="time">(60 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="8.8"> <span>Стаття 8.8 Давання хабаря</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="9.8"> <span>Стаття 9.8 Втеча від погоні</span> <span class="time">(25 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="9.9"> <span>Стаття 9.9 Несплата штрафів</span> <span class="time">(30 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.1"> <span>Стаття 10.1 Посягання на життя співробітника правоохоронного органу</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.2"> <span>Стаття 10.2 Застосування насильства щодо представника влади</span> <span class="time">(50 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.3"> <span>Стаття 10.3 Образа представника державної організації</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.4"> <span>Стаття 10.4 Провокація співробітника державної організації</span> <span class="time">(10 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.5"> <span>Стаття 10.5 Перешкода співробітникам правоохоронних органів</span> <span class="time">(15 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.7"> <span>Стаття 10.7 Перешкода транспортному засобу з проблисковими маячками</span> <span class="time">(25 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.8"> <span>Стаття 10.8 Здійснення нападу на колону</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.9"> <span>Стаття 10.9 Непідкорення співробітнику правоохоронних органів</span> <span class="time">(20 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.10"> <span>Стаття 10.10 Непідкорення співробітнику правоохоронних органів під час НС</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="10.11"> <span>Стаття 10.11 Втеча під час затримання</span> <span class="time">(40 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="11.8"> <span>Стаття 11.8 Уникнення призову</span> <span class="time">(50 хв.)</span></label>
+                <label><input type="checkbox" name="article" value="12.1"> <span>Стаття 12.1 Порушення правил перетину Блокпоста</span> <span class="time">(25 хв.)</span></label>
+            </div>
+            <button class="save-articles-btn" onclick="saveSelectedArticles()">Зберегти вибір</button>
+        </div>
+    </div>
+
+    <div class="popup" id="errorPopup">
+        <div class="popup-content">
+            <h2>Помилка 404</h2>
+            <p>На жаль, ми не змогли надіслати вашу заяву. Перевірте з'єднання або спробуйте пізніше.</p>
+            <button class="close-btn" onclick="closePopup()">Закрити</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const file = document.getElementById('fileUpload').files[0];
+            const applicantName = document.getElementById('applicantName').value.trim();
+            const targetName = document.getElementById('targetName').value.trim();
+            const statement = document.getElementById('statement').innerHTML.trim();
+            const evidenceLink = document.getElementById('evidenceLink').value.trim();
+            const selectedArticles = Array.from(document.querySelectorAll('input[name="article"]:checked')).map(el => el.value);
+
+            if (!file && !applicantName && !targetName && !statement && !evidenceLink && selectedArticles.length === 0) {
+                alert('Будь ласка, заповніть хоча б одне поле, додайте файл або виберіть статтю.');
+            } else {
+                document.getElementById('errorPopup').style.display = 'flex';
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('errorPopup').style.display = 'none';
+        }
+
+        function openArticlesPopup() {
+            document.getElementById('articlesPopup').style.display = 'flex';
+        }
+
+        function saveSelectedArticles() {
+            const selected = Array.from(document.querySelectorAll('input[name="article"]:checked')).map(checkbox => {
+                const label = checkbox.parentElement;
+                return `${label.querySelector('span').textContent} ${label.querySelector('.time').textContent}`;
+            });
+
+            const selectedArticlesDiv = document.getElementById('selectedArticles');
+            selectedArticlesDiv.innerHTML = selected.length > 0 ? selected.join('<br>') : '';
+
+            document.getElementById('articlesPopup').style.display = 'none';
+        }
+
+        document.getElementById('fileUpload').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'Файл не вибрано';
+            document.getElementById('fileName').textContent = fileName;
+        });
+    </script>
 </body>
 </html>
